@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+.full-page-panel {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scroll-prompt {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.scroll-prompt span {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.scroll-prompt i {
+  font-size: 30px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
