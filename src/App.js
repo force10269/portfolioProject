@@ -59,11 +59,13 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar bg="light" expand="lg" fixed="top">
-        <Navbar.Brand href="#name">&nbsp; &nbsp; Portfolio</Navbar.Brand>
+      <Navbar className={activeSection === 'name' ? 'navbar-big' : ''} bg="light" expand="lg" fixed="top">
+        <Navbar.Brand href="#name">
+          <span className="brand-text">Korry Tunnicliff</span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="ms-auto">
             <Nav.Link href="#name" active={activeSection === 'name'}>Name</Nav.Link>
             <Nav.Link href="#about" active={activeSection === 'about'}>About</Nav.Link>
             <Nav.Link href="#experience" active={activeSection === 'experience'}>Experience</Nav.Link>
