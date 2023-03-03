@@ -5,6 +5,7 @@ import NameComponent from './components/NameComponent';
 import AboutComponent from './components/AboutComponent';
 import ExperienceComponent from './components/ExperienceComponent';
 import ProjectsComponent from './components/ProjectsComponent';
+import ContactMeComponent from './components/ContactMeComponent';
 import FooterComponent from './components/FooterComponent';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
   const projectsRef = useRef(null);
+  const contactMeRef = useRef(null);
 
   // Definition of the scroll event listener
   const scrollListener = () => {
@@ -26,11 +28,13 @@ function App() {
     const aboutTop = aboutRef.current.offsetTop - 20;
     const experienceTop = experienceRef.current.offsetTop - 20;
     const projectsTop = projectsRef.current.offsetTop - 20;
+    const contactMeTop = contactMeRef.current.offsetTop - 20;
 
     const inName = (nameTop <= pos && pos < aboutTop);
     const inAbout = (aboutTop <= pos && pos < experienceTop);
     const inExperience = (experienceTop <= pos && pos < projectsTop);
-    const inProjects = (projectsTop <= pos);
+    const inProjects = (projectsTop <= pos && pos < contactMeTop);
+    const inContactMe = (contactMeTop <= pos);
 
     if(inName) {
       setActiveSection('name');
@@ -40,6 +44,8 @@ function App() {
       setActiveSection('experience');
     }else if(inProjects){
       setActiveSection('projects');
+    }else if(inContactMe){
+      setActiveSection('contactMe');
     }
   }
 
@@ -62,6 +68,7 @@ function App() {
             <Nav.Link href="#about" active={activeSection === 'about'}>About</Nav.Link>
             <Nav.Link href="#experience" active={activeSection === 'experience'}>Experience</Nav.Link>
             <Nav.Link href="#projects" active={activeSection === 'projects'}>Projects</Nav.Link>
+            <Nav.Link href="#contactMe" active={activeSection === 'contactMe'}>Contact Me</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -76,6 +83,9 @@ function App() {
       </div>
       <div ref={projectsRef}>
         <ProjectsComponent />
+      </div>
+      <div ref={contactMeRef}>
+        <ContactMeComponent />
       </div>
       <FooterComponent />
     </div>
