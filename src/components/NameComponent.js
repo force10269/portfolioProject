@@ -31,20 +31,22 @@ function NameComponent() {
 
   return (
     <div id="name" className="full-page-panel">
-      <Container>
+      <Container fluid style={{ paddingLeft: 200, paddingRight: 200 }}>
         <Row>
           <Col md={6}>
             <img src={headshot} alt="Headshot" className="headshot"/>
           </Col>
           <Col md={6}>
-            <h1 style={{fontSize: '6rem'}}>Korry Tunnicliff</h1>
-            <h3 style={{fontSize: '3rem'}} className="name-subheader-1">CU Boulder '23</h3>
-            <h3 style={{fontSize: '3rem'}} className="name-subheader-2">Computer Science BS</h3>
+            <br />
+            <br />
+            <h1 style={{fontSize: '4rem'}}><strong>Korry Tunnicliff</strong></h1>
+            <h3 style={{fontSize: '2.5rem'}} className="name-subheader-1">CU Boulder '23</h3>
+            <h3 style={{fontSize: '2.5rem'}} className="name-subheader-2">Computer Science BS</h3>
           </Col>
         </Row>
       </Container>
       <div className="scroll-prompt">
-          <AiOutlineArrowDown />
+          <AiOutlineArrowDown/>
       </div>
   </div>
   );

@@ -24,11 +24,11 @@ function App() {
     const pos = window.scrollY;
     
     // In order for the automatic highlight on the navbar to work, we need to add this offset
-    const nameTop = nameRef.current.offsetTop - 50;
-    const aboutTop = aboutRef.current.offsetTop - 50;
-    const experienceTop = experienceRef.current.offsetTop - 50;
-    const projectsTop = projectsRef.current.offsetTop - 50;
-    const contactMeTop = contactMeRef.current.offsetTop - 50;
+    const nameTop = nameRef.current.offsetTop;
+    const aboutTop = aboutRef.current.offsetTop - 200;
+    const experienceTop = experienceRef.current.offsetTop - 200;
+    const projectsTop = projectsRef.current.offsetTop - 200;
+    const contactMeTop = contactMeRef.current.offsetTop - 200;
 
     const inName = (nameTop <= pos && pos < aboutTop);
     const inAbout = (aboutTop <= pos && pos < experienceTop);
@@ -55,13 +55,45 @@ function App() {
     return () => {
       window.removeEventListener('scroll', scrollListener);
     }
-  }, [])
+  }, []);
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  
+  function handleScroll() {
+    const elements = document.querySelectorAll('.fade-in');
+    elements.forEach((el) => {
+      if (isElementInViewport(el)) {
+        el.classList.add('fade-in-active');
+      } else {
+        el.classList.remove('fade-in-active');
+      }
+    });
+
+    const experiences = document.querySelectorAll('.experience-card');
+    experiences.forEach((ex) => {
+      if (isElementInViewport(ex)) {
+        ex.classList.add('experience-card-active');
+      }else{
+        ex.classList.remove('experience-card-active');
+      }
+    })
+  }
+  
+  window.addEventListener('scroll', handleScroll);
 
   return (
     <div className="App">
-      <Navbar className={activeSection === 'name' ? 'navbar-big' : ''} bg="light" expand="lg" fixed="top">
+      <Navbar className={activeSection === 'name' ? 'navbar-big' : ''} expand="lg" fixed="top">
         <Navbar.Brand href="#name">
-          <span className="brand-text">Korry Tunnicliff</span>
+          <span className="brand-text">Korry Tunnicliff &nbsp;</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
