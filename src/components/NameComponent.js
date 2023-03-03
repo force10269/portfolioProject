@@ -40,13 +40,13 @@ function NameComponent() {
             <h1 style={{fontSize: '6rem'}}>Korry Tunnicliff</h1>
             <h3 style={{fontSize: '3rem'}} className="name-subheader-1">CU Boulder '23</h3>
             <h3 style={{fontSize: '3rem'}} className="name-subheader-2">Computer Science BS</h3>
-           </Col>
+          </Col>
         </Row>
       </Container>
       <div className="scroll-prompt">
           <AiOutlineArrowDown />
       </div>
-    </div>
+  </div>
   );
 }
 

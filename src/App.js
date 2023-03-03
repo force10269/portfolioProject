@@ -23,12 +23,12 @@ function App() {
   const scrollListener = () => {
     const pos = window.scrollY;
     
-    // In order for the automatic highlight on the navbar to work, we need to add this offset of 20
-    const nameTop = nameRef.current.offsetTop - 20;
-    const aboutTop = aboutRef.current.offsetTop - 20;
-    const experienceTop = experienceRef.current.offsetTop - 20;
-    const projectsTop = projectsRef.current.offsetTop - 20;
-    const contactMeTop = contactMeRef.current.offsetTop - 20;
+    // In order for the automatic highlight on the navbar to work, we need to add this offset
+    const nameTop = nameRef.current.offsetTop - 50;
+    const aboutTop = aboutRef.current.offsetTop - 50;
+    const experienceTop = experienceRef.current.offsetTop - 50;
+    const projectsTop = projectsRef.current.offsetTop - 50;
+    const contactMeTop = contactMeRef.current.offsetTop - 50;
 
     const inName = (nameTop <= pos && pos < aboutTop);
     const inAbout = (aboutTop <= pos && pos < experienceTop);

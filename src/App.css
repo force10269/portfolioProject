@@ -42,6 +42,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
+}
+
+.full-page-panel-alternate {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #0D1B2A;
+  color: #E0E1DD;
 }
 
 .scroll-prompt {
@@ -83,7 +93,7 @@
 
 .nav-link {
   margin-right: 1em;
-  color: lightblue;
+  color: #c6e2ff;
 }
 
 .navbar-big {
@@ -109,4 +119,8 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-left: 4.5em;
+}
+
+body {
+  background-color: #E0E1DD;
 }

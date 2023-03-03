@@ -10,15 +10,11 @@
     transform: translate(0, 30px);
 }
 
-h1, h3 {
+h1, h2, h3, h4 {
     transition: transform 0.5s ease-out;
 }
 
-h1:hover{
-    transform: translate(0, -15px);
-}
-
-h3:hover{
+h1:hover, h2:hover, h3:hover, h4:hover{
     transform: translate(0, -15px);
 }
 

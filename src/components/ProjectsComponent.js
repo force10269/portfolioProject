@@ -2,7 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function ProjectsComponent() {
   return (
-    <div id="projects" className="full-page-panel">
+    <div id="projects" className="full-page-panel-alternate">
       <Container>
         <Row>
           <Col>
