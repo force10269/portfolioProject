@@ -37,9 +37,11 @@ function NameComponent() {
             <img src={headshot} alt="Headshot" className="headshot"/>
           </Col>
           <Col md={6} className="align-items-center large-screen-padding">
-            <h1 style={{fontSize: "8vh"}}><strong>Korry Tunnicliff</strong></h1>
-            <h3 style={{fontSize: "5vh"}} className="name-subheader-1"><i>CU Boulder '23</i></h3>
-            <h3 style={{fontSize: "5vh"}} className="name-subheader-2"><i>Computer Science BS</i></h3>
+            <h1 style={{fontSize: "5vh"}}><strong>Korry Tunnicliff</strong></h1>
+            <h3 style={{fontSize: "3vh"}} className="name-subheader-1"><i>CU Boulder '23</i></h3>
+            <h3 style={{fontSize: "3vh"}} className="name-subheader-2"><i>Computer Science BS</i></h3>
+            <br />
+            <br />
           </Col>
         </Row>
       </Container>
