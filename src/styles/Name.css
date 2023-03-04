@@ -1,60 +1,50 @@
 body {
     margin: 0 100%;
 }
-
+    
 .headshot {
     width: 100%;
-    max-width: 300px;
+    max-width: 30vw;
     border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 15px solid #0D1B2A;
+    margin-bottom: 1vw;
+    border: 1.5vw solid #0D1B2A;
     transition: transform 0.5s ease-out;
-  }
+}
 
-.headshot:hover{
-    transform: translate(0, 30px);
+.headshot:hover {
+    transform: translate(0, 3vw);
 }
 
 h1, h2, h3, h4 {
     transition: transform 0.5s ease-out;
 }
 
-h1:hover, h2:hover, h3:hover, h4:hover{
-    transform: translate(0, -15px);
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover {
+    transform: translate(0, -1.5vw);
 }
 
-  .name-subheader-1 {
-    font-size: 0.1rem;
+.name-subheader-1 {
+    font-size: 0.1vw;
     animation-name: name-subheader-1-animation;
     animation-duration: 0.7s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
-  }
+}
 
-  .name-subheader-2 {
-    font-size: 0.1rem;
+.name-subheader-2 {
+    font-size: 0.1vw;
     animation-name: name-subheader-2-animation;
     animation-delay: 1s;
     animation-duration: 0.7s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-out; 
+    animation-timing-function: ease-out;
     opacity: 0;
-  }
-  
-  @keyframes name-subheader-1-animation {
-    0% {
-      opacity: 0;
-      transform: translateY(100%);
-      font-size: 0%;
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-      font-size: 100%;
-    }
-  }
+}
 
-  @keyframes name-subheader-2-animation {
+@keyframes name-subheader-1-animation {
     0% {
         opacity: 0;
         transform: translateY(100%);
@@ -63,15 +53,38 @@ h1:hover, h2:hover, h3:hover, h4:hover{
     100% {
         opacity: 1;
         transform: translateY(0%);
-        font-size: 100%;
+        font-size: 5vh;
     }
-  }
+}
 
-  .scroll-prompt {
-    font-size: 3em;
-  }
-  
-  .scroll-prompt:hover {
+@keyframes name-subheader-2-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+        font-size: 0%;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+        font-size: 5vh;
+    }
+}
+
+.scroll-prompt {
+    font-size: 3vw;
+}
+
+.scroll-prompt:hover {
     background-color: rgb(224, 245, 255);
     transition: background-color 0.2s ease-in-out;
-  }
+}
+
+.right-column {
+    margin-top: 50vh;
+}
+
+@media (min-width: 992px) {
+    .large-screen-padding {
+      padding-top: 20vh;
+    }
+}

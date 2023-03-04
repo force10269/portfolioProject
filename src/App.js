@@ -93,18 +93,18 @@ function App() {
   
   return (
     <div className="App">
-      <Navbar className={activeSection === 'name' ? 'navbar-big' : ''} expand="lg" fixed="top">
+      <Navbar className={`custom-navbar ${activeSection === 'name' ? 'navbar-big' : ''}`} variant="dark" expand="lg" fixed="top">
         <Navbar.Brand href="#name">
-          <span className="brand-text">Korry Tunnicliff &nbsp;</span>
+          <span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff &nbsp;</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="mr-auto">
             <Nav.Link href="#name" active={activeSection === 'name'}>Name</Nav.Link>
             <Nav.Link href="#about" active={activeSection === 'about'}>About</Nav.Link>
             <Nav.Link href="#experience" active={activeSection === 'experience'}>Experience</Nav.Link>
             <Nav.Link href="#projects" active={activeSection === 'projects'}>Projects</Nav.Link>
-            <Nav.Link href="#contactMe" active={activeSection === 'contactMe'}>Contact Me</Nav.Link>
+            <Nav.Link href="#contactMe" active={activeSection === 'contactMe'}>Contact&nbsp;Me</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

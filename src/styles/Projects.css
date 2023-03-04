@@ -1,75 +1,51 @@
-img {
-    max-width: 100%;
-    height: auto;
-  }
-
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+.projects-section {
+    background-color: #0D1B2A;
+    color: #E0E1DD;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
   }
   
   .project-card {
     position: relative;
-    width: 350px;
-    height: 250px;
-    margin: 20px;
-    border-radius: 10px;
-    background-size: cover;
-    transition: all 0.3s ease;
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 5vh;
+    border-radius: 2vw;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   }
   
-  .project-card:hover {
-    border: 2px solid #415A77;
-    transform: scale(1.05);
-    background-color: rgba(0, 0, 255, 0.1);
+  .project-card-image-container {
+    position: relative;
+    height: 50%;
   }
   
-  .project-card:hover .project-title,
-  .project-card:hover .project-description {
-    color: #fff;
-  }
-  
-  .project-card .project-title {
+  .project-card-image {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000000;
-    transition: all 0.3s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
-  .project-card .project-description {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    font-size: 16px;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000000;
-    transition: all 0.3s ease;
+  .project-card-info {
+    position: relative;
+    height: 50%;
+    padding: 2vw;
   }
   
-  .project-card:nth-child(1),
-  .project-card:nth-child(2) {
-    height: 350px;
+  .project-card-title {
+    font-size: 4vw;
+    margin-bottom: 2vh;
   }
   
-  .project-card:nth-child(1):hover,
-  .project-card:nth-child(2):hover,
-  .project-card:nth-child(3):hover {
-    background-color: rgba(0, 0, 255, 0.2);
+  .project-card-description {
+    font-size: 3vw;
   }
-
   
-.projects-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #0D1B2A;
-    color: #E0E1DD;
+@media only screen and (min-width: 768px) {
+    .project-card {
+        height: 50vh;
+    } 
 }
-

@@ -1,7 +1,41 @@
 
-  .experience-card {
+.experience-card {
     display: flex;
-    padding: 20px;
+    padding: 2.5%;
     border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0.5vw 1vw rgba(0, 0, 0, 0.25);
+}
+
+.experience-card h3 {
+    font-size: 3.5vh;
+}
+
+.experience-card h4 {
+    font-size: 2.5vh;
+}
+
+.experience-card h5 {
+    font-size: 2.5vh;
+}   
+
+.experience-card p {
+    font-size: 2.3vh;
+}
+
+@media (max-width: 767px) {
+    .experience-card h3 {
+        font-size: 3vh;
+    }
+
+    .experience-card h4 {
+      font-size: 1.8vh;
+    }
+
+    .experience-card h5 {
+        font-size: 1.8vh;
+    }
+
+    .experience-card p {
+      font-size: 1.3vh;
+    }
   }
