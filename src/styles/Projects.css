@@ -63,4 +63,13 @@ img {
   .project-card:nth-child(3):hover {
     background-color: rgba(0, 0, 255, 0.2);
   }
+
   
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0D1B2A;
+    color: #E0E1DD;
+}
+

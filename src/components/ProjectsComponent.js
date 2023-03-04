@@ -19,9 +19,9 @@ function ProjectCard(props) {
 
 function ProjectsComponent() {
   return (
-    <div id="projects" className="bg-light">
+    <div id="projects" className="projects-section">
       <Container className="py-5" fluid style={{ paddingLeft: 200, paddingRight: 200 }}>
-        <h1 className="text-center mb-5 fade-in" style={{fontSize: '5rem'}}>Projects</h1>
+      <h1 className="text-center mb-5 fade-in" style={{fontSize: '5rem'}}>Projects</h1>
         <Row className="justify-content-center">
           <Col md={5} className="text-center">
             <ProjectCard imgSrc={project1Img} title="Dynein Protein Analysis" description="This is a project of several Python scripts which utilize libraries such as OpenCV, Tkinter, Dotenv, and the ImageJ application and interface to perform an analysis of cell images containing dynein proteins." />
@@ -29,6 +29,9 @@ function ProjectsComponent() {
           <Col md={5} className="text-center">
             <ProjectCard imgSrc={project2Img} title="Caliber Marketplace" description="Working with Caliber Public Safety, me and a group of 5 other undergraduate CSCI students at CU Boulder have been working on creating a marketplace for Caliber to advertise various features to their customers in different police departments. This project uses a MEAN stack, with MongoDB, ExpressJS, AngularJS (including PrimeNG), and NodeJS." />
           </Col>
+        </Row>
+        <Row>
+          <Col><br/><br/><br/><br/><br/></Col>
         </Row>
         <Row className="justify-content-center">
           <Col md={5} className="text-center">

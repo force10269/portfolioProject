@@ -90,9 +90,9 @@ body {
 }
 
 .navbar {
-  font-size: 1.3em;
+  font-size: 0.8em;
   background-color: #0D1B2A;
-  height: 8%;
+  height: 6.5%;
   transition: height 0.5s ease-in-out, font-size 0.5s ease-in-out;
 }
 
@@ -126,8 +126,8 @@ body {
 }
 
 .navbar-big {
-  height: 13%;
-  font-size: 1.6em;
+  height: 11%;
+  font-size: 1em;
 }
 
 .navbar-brand {

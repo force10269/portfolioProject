@@ -1,3 +1,4 @@
 node_modules
 portfolioProject
 .DS_Store
+.env

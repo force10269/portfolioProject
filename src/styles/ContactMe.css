@@ -1,0 +1,9 @@
+.form-field-left {
+    margin: 0.5rem 23rem;
+    padding: 5px 5px;
+    font-size: 12px;
+  }
+
+.form-field-right {
+    margin: 0.5rem 0rem;
+}

@@ -57,6 +57,7 @@ function App() {
     }
   }, []);
 
+  // This is for fade-in classes when the user is scrolling
   function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -77,6 +78,7 @@ function App() {
       }
     });
 
+    // We also query for the cards in experiences to fade in and out
     const experiences = document.querySelectorAll('.experience-card');
     experiences.forEach((ex) => {
       if (isElementInViewport(ex)) {
@@ -88,7 +90,7 @@ function App() {
   }
   
   window.addEventListener('scroll', handleScroll);
-
+  
   return (
     <div className="App">
       <Navbar className={activeSection === 'name' ? 'navbar-big' : ''} expand="lg" fixed="top">
@@ -97,7 +99,7 @@ function App() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="ml-auto">
             <Nav.Link href="#name" active={activeSection === 'name'}>Name</Nav.Link>
             <Nav.Link href="#about" active={activeSection === 'about'}>About</Nav.Link>
             <Nav.Link href="#experience" active={activeSection === 'experience'}>Experience</Nav.Link>

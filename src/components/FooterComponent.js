@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 function FooterComponent() {
   return (
     <footer className="bg-light">
-      <Container>
+       <Container>
         <Row>
           <Col>
             <p>© 2023 Korry Tunnicliff. All rights reserved.</p>

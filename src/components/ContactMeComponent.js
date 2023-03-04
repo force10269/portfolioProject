@@ -1,21 +1,97 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import '../styles/ContactMe.css';
+import React, { useState } from 'react';
+import { Row, Col, Form, Button } from 'react-bootstrap';
+import emailjs from 'emailjs-com';
 
-function ContactMeComponent() {
+function ContactMe() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, { 
+      message: message,
+      from_name: name,
+      to_name: "Korry",
+      reply_to: email,
+      phone_number: phone,
+    }, process.env.REACT_APP_USER_ID)
+      .then((result) => {
+        console.log(result.text);
+        setSubmitted(true);
+      }, (error) => {
+        console.log(error.text);
+      });
+  }
+
   return (
-    <div id="contactMe" className="full-page-panel">
-      <Container>
+    <div className="contact-me">
+      <br/>
+      <br/>
+      <h1 style={{fontSize: "4.5rem"}} id="about"><strong>Contact Me</strong></h1>
+      <p><u>Email:</u> korry.tunnicliff@colorado.edu &nbsp; &nbsp; | &nbsp; &nbsp; <u>Phone:</u> 720-833-1097</p>
+      {!submitted && (
+        <Form onSubmit={handleSubmit}>
+        <p>or...</p><br /><p><i>Submit a message: </i></p>
         <Row>
-          <Col>
-            <h2 id="contactMe">Contact Me</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <Col md={6}>
+            <Form.Group controlId="name">
+              <Form.Control
+                type="text"
+                placeholder="Enter your name *"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-50 form-field-left"
+                required
+              />
+            </Form.Group>
+            <Form.Group controlId="email">
+              <Form.Control
+                type="email"
+                placeholder="Enter your email *"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-50 form-field-left"
+                required
+              />
+            </Form.Group>
+            <Form.Group controlId="phone">
+              <Form.Control
+                type="text"
+                placeholder="Enter your phone number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="w-50 form-field-left"
+              />
+            </Form.Group>
+          </Col>
+          <Col md={6}>
+            <Form.Group controlId="message">
+              <Form.Control
+                as="textarea"
+                rows={Math.max(3, Math.ceil(message.length / 50))}
+                placeholder="Enter your message *"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-50 form-field-right"
+              />
+            </Form.Group>
           </Col>
         </Row>
-      </Container>
-      <div className="scroll-prompt">
-        <i className="fas fa-chevron-down"></i>
-      </div>
+        <Button variant="primary" type="submit" block>
+          Submit
+        </Button>
+      </Form>
+      )}
+      {submitted && (
+        <p>Thank you for contacting me! I will get back to you as soon as possible.</p>
+      )}
+      <br />
     </div>
   );
-}
+};
 
-export default ContactMeComponent;
+export default ContactMe;

@@ -31,7 +31,7 @@ function NameComponent() {
 
   return (
     <div id="name" className="full-page-panel">
-      <Container fluid style={{ paddingLeft: 200, paddingRight: 200 }}>
+      <Container fluid style={{ paddingLeft: 300, paddingRight: 300 }}>
         <Row>
           <Col md={6}>
             <img src={headshot} alt="Headshot" className="headshot"/>
@@ -39,9 +39,9 @@ function NameComponent() {
           <Col md={6}>
             <br />
             <br />
-            <h1 style={{fontSize: '4rem'}}><strong>Korry Tunnicliff</strong></h1>
-            <h3 style={{fontSize: '2.5rem'}} className="name-subheader-1">CU Boulder '23</h3>
-            <h3 style={{fontSize: '2.5rem'}} className="name-subheader-2">Computer Science BS</h3>
+            <h1><strong>Korry Tunnicliff</strong></h1>
+            <h3 className="name-subheader-1">CU Boulder '23</h3>
+            <h3 className="name-subheader-2">Computer Science BS</h3>
           </Col>
         </Row>
       </Container>
