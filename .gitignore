@@ -5,3 +5,5 @@ portfolioProject
 
 # Local Netlify folder
 .netlify
+
+public/env.js

@@ -3,9 +3,9 @@
     color: #E0E1DD;
     padding-top: 5vh;
     padding-bottom: 5vh;
-  }
-  
-  .project-card {
+}
+
+.project-card {
     position: relative;
     width: 100%;
     height: 30vh;
@@ -13,37 +13,37 @@
     border-radius: 2vw;
     overflow: hidden;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .project-card-image-container {
+}
+
+.project-card-image-container {
     position: relative;
     height: 50%;
-  }
-  
-  .project-card-image {
+}
+
+.project-card-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .project-card-info {
+}
+
+.project-card-info {
     position: relative;
     height: 50%;
     padding: 2vw;
-  }
-  
-  .project-card-title {
+}
+
+.project-card-title {
     font-size: 4vw;
     margin-bottom: 2vh;
-  }
-  
-  .project-card-description {
+}
+
+.project-card-description {
     font-size: 3vw;
-  }
-  
+}
+
 @media only screen and (min-width: 768px) {
     .project-card {
         height: 50vh;

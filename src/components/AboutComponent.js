@@ -8,7 +8,8 @@ function AboutComponent() {
     <div id="about" className="full-page-panel-alternate">
       <Container fluid style={{ paddingLeft: '10%', paddingRight: '5%' }}>
         <Row>
-          <Col className="about-column text-left">
+          <Col xs={12} md={6} className="about-column text-left">
+            <br />
             <h1 className="fade-in text-center" id="about"><strong>About</strong></h1>
             <div>
               <h3 className="fade-in">&nbsp; &nbsp; &nbsp; &nbsp; I am a Computer Science student at the University of Colorado Boulder. 
@@ -33,7 +34,7 @@ function AboutComponent() {
           </Col>
 
 
-          <Col className="my-5">
+          <Col xs={12} md={6} className="my-5">
             <h1 className="fade-in" style={{ fontSize: '3vw' }}><i>Resume:</i></h1>
             <div className="row justify-content-center align-items-center mb-15">
               <div className="col-auto">

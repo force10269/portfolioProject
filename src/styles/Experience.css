@@ -28,7 +28,7 @@
     }
 
     .experience-card h4 {
-      font-size: 1.8vh;
+        font-size: 1.8vh;
     }
 
     .experience-card h5 {
@@ -36,6 +36,6 @@
     }
 
     .experience-card p {
-      font-size: 1.3vh;
+        font-size: 1.3vh;
     }
-  }
+}

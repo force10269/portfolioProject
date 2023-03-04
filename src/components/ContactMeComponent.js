@@ -28,7 +28,7 @@ function ContactMe() {
   }
 
   return (
-    <div className="contact-me">
+    <div id="contactMe">
       <br />
       <br />
       <h1 style={{ fontSize: "4.5vw" }} id="about">
@@ -52,7 +52,7 @@ function ContactMe() {
               <Form.Group controlId="name">
                 <Form.Control
                   type="text"
-                  placeholder="Enter your name *"
+                  placeholder="Name: *"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-50 form-field-left"
@@ -62,7 +62,7 @@ function ContactMe() {
               <Form.Group controlId="email">
                 <Form.Control
                   type="email"
-                  placeholder="Enter your email *"
+                  placeholder="Email: *"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-50 form-field-left"
@@ -72,7 +72,7 @@ function ContactMe() {
               <Form.Group controlId="phone">
                 <Form.Control
                   type="text"
-                  placeholder="Enter your number"
+                  placeholder="Number: "
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="w-50 form-field-left"
@@ -84,7 +84,7 @@ function ContactMe() {
                 <Form.Control
                   as="textarea"
                   rows={Math.max(3, Math.ceil(message.length / 50))}
-                  placeholder="Enter your message *"
+                  placeholder="Message: *"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="w-50 form-field-right"

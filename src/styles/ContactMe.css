@@ -11,12 +11,12 @@
 @media screen and (max-width: 768px) {
     .form-field-left,
     .form-field-right {
-      margin: 0 auto;
+        margin: 0 auto;
     }
     .form-field-left {
-      width: 100%;
+        width: 100%;
     }
     .form-field-right {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
