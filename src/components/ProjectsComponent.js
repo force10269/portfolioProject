@@ -35,6 +35,8 @@ function ProjectsComponent() {
             <ProjectCard imgSrc={project2Img}/>
             <h1 className="fade-in">Caliber Marketplace</h1>
             <p className="fade-in">Working with Caliber Public Safety, me and a group of five other students are working on creating a marketplace for Caliber's products and features using the MEAN stack.</p>
+            <FaGithub color="grey" className="fade-in" size={'5vw'} />
+            <p>Coming Soon</p>
             <br /><br /><br /><br /><br />
           </Col>
         </Row>
@@ -45,7 +47,7 @@ function ProjectsComponent() {
           <Col md={5} className="text-center">
             <ProjectCard imgSrc={project3Img}/>
           </Col>
-          <h1 className="fade-in">Portfolio!</h1>
+          <h1 className="fade-in">Personal Portfolio Website</h1>
           <p className="fade-in">This page! Everything you see here was created with the ReactJS framework and Bootstrap. Deployment achieved through Netlify.</p>
           <a href="https://github.com/force10269/portfolioProject" target="_blank" rel="noopener noreferrer">
             <FaGithub className="fade-in" size={'5vw'} />

@@ -31,8 +31,8 @@ function ContactMe() {
     <div id="contactMe">
       <br />
       <br />
-      <h1 style={{ fontSize: "4.5vw" }} id="about">
-        <strong>Contact Me</strong>
+      <h1 style={{ fontSize: "7vw" }}>
+        <strong>Contact Me!</strong>
       </h1>
       <p>
         <u>Email:</u> korry.tunnicliff@colorado.edu
@@ -42,6 +42,7 @@ function ContactMe() {
       </p>
       {!submitted && (
         <Form onSubmit={handleSubmit}>
+          <br />
           <p>or...</p>
           <br />
           <p>

@@ -90,10 +90,10 @@ function App() {
   }
   
   window.addEventListener('scroll', handleScroll);
-  
+
   return (
     <div className="App">
-      <Navbar className={`custom-navbar ${activeSection === 'name' ? 'navbar-big' : ''}`} variant="dark" expand="lg" fixed="top">
+      <Navbar className={`custom-navbar ${activeSection === 'name' ? 'navbar-big' : ''} mr-auto`} variant="dark" expand="lg" fixed="top">
         <Navbar.Brand href="#name">
           <span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff &nbsp;</span>
         </Navbar.Brand>

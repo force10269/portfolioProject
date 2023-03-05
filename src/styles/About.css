@@ -3,7 +3,7 @@
 }  
 
 .about-column h1 {
-    font-size: 4.5vw;
+    font-size: 8vw;
 }
   
 .about-column h3 {
@@ -13,17 +13,26 @@
 .about-column h4 {
     font-size: 2vh;
 }
-  
+
 @media screen and (min-width: 992px) {
     .about-column h1 {
-        font-size: 7vw;
+        font-size: 5.5vw;
     }
 
     .about-column h3 {
-        font-size: 4vh;
+        font-size: 3vh;
     }
 
     .about-column h4 {
-        font-size: 3vh;
+        font-size: 2.5vh;
+    }
+}
+
+@media (max-width: 992px) {
+    .flex-md-column {
+        flex-direction: row !important;
+    }
+    .flex-md-column > * {
+        margin-right: 20px;
     }
 }
