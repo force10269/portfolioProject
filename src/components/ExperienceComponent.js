@@ -75,7 +75,12 @@ function ExperienceComponent() {
             onClick={() => handleClick(index)}
           >
             <div className='experience-card fade-in' style={{ width: '100%' }}>
-              <Col md={4}>
+              <Col md={4} style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}>
                 <h3 className="mb-0">{experience.title}</h3>
                 <h4 className="mb-0"><i>{experience.location}</i></h4>
                 <h5 className="mb-0">{experience.timeline}</h5>

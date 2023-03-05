@@ -130,16 +130,32 @@ function App() {
     window.addEventListener('scroll', handleScroll);
   }
 
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsSmallScreen(window.innerWidth < 992);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const navbarClass = `custom-navbar ${activeSection === 'name' ? 'navbar-big' : ''} ${isSmallScreen ? 'm-auto justify-content-center' : 'mr-auto'}`;
+
   return (
     <div className="App">
-      <Navbar className={`custom-navbar ${activeSection === 'name' ? 'navbar-big' : ''} mr-auto`} variant="dark" expand="lg" fixed="top">
-        <Navbar.Brand href="#name">
+      <Navbar className={navbarClass} variant="dark" expand="lg" fixed="top">
+        {/*<Navbar.Brand href="#name">
           <span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff &nbsp;</span>
-        </Navbar.Brand>
+        </Navbar.Brand>*/}
+        <Nav.Link id="nameLink" href="#name" active={activeSection === 'name'}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#name" active={activeSection === 'name'}>Name</Nav.Link>
             <Nav.Link href="#about" active={activeSection === 'about'}>About</Nav.Link>
             <Nav.Link href="#experience" active={activeSection === 'experience'}>Experience</Nav.Link>
             <Nav.Link href="#projects" active={activeSection === 'projects'}>Projects</Nav.Link>

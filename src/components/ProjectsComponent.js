@@ -21,6 +21,7 @@ function ProjectsComponent() {
     <div id="projects" className="projects-section">
       <Container className="py-5" fluid style={{ paddingLeft: '10%', paddingRight: '10%' }}>
       <h1 className="text-center mb-5 fade-in" style={{fontSize: '7vw'}}><strong>Projects</strong></h1>
+        <br />
         <Row className="justify-content-center">
           <Col md={5} className="text-center">
             <ProjectCard imgSrc={project1Img}/>
@@ -37,11 +38,8 @@ function ProjectsComponent() {
             <p className="fade-in">Working with Caliber Public Safety, me and a group of five other students are working on creating a marketplace for Caliber's products and features using the MEAN stack.</p>
             <FaGithub color="grey" className="fade-in" size={'5vw'} />
             <p>Coming Soon</p>
-            <br /><br /><br /><br /><br />
+            <br /><br /><br />
           </Col>
-        </Row>
-        <Row>
-          <Col style={{ height: '10vh' }}></Col>
         </Row>
         <Row className="justify-content-center">
           <Col md={5} className="text-center">

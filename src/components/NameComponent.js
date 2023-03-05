@@ -33,10 +33,15 @@ function NameComponent() {
     <div id="name" className="full-page-panel">
       <Container fluid style={{ paddingLeft: "15%", paddingRight: "15%" }}>
         <Row>
-          <Col md={6}>
+          <Col md={6} style={{paddingTop: "5%" }}>
             <img src={headshot} alt="Headshot" className="headshot"/>
           </Col>
-          <Col md={6} className="align-items-center large-screen-padding">
+          <Col md={6} className="align-items-center" style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}>
             <h1><strong>Korry Tunnicliff</strong></h1>
             <h3 style={{fontSize: "4vh;"}} className="name-subheader-1"><i>CU Boulder '23</i></h3>
             <h3 style={{fontSize: "4vh;"}} className="name-subheader-2"><i>Computer Science BS</i></h3>

@@ -101,27 +101,30 @@ html {
   transition: height 0.5s ease-in-out, font-size 0.5s ease-in-out;
 }
 
-.nav-link {
+.nav-link, #nameLink {
   font-family: 'Helvetica';
   margin-right: 5%;
+  margin-left: 5%;
   color: #E0E1DD !important;
   position: relative;
 }
 
-.nav-link::after {
+.nav-link::after, #nameLink::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
-  height: 0.4vh;
+  height: 0.2vh;
   background-color: #00a9e0;
   transition: width 0.3s ease-in-out;
 }
 
 .nav-link:hover::after,
-.nav-link.active::after {
+.nav-link.active::after,
+#nameLink:hover::after,
+#nameLink.active::after {
   width: 100%;
 }
 
@@ -172,6 +175,20 @@ html {
   .nav-link:hover::after,
   .nav-link.active::after {
     width: 20%;
+  }
+
+  #nameLink:hover::after,
+  #nameLink.active::after {
+    width: 105%;
+  }
+
+  #nameLink {
+    display: flex;
+    justify-content: center;
+  }
+
+  .custom-navbar {
+    justify-content: center;
   }
 }
 
