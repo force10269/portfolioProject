@@ -38,8 +38,8 @@ function NameComponent() {
           </Col>
           <Col md={6} className="align-items-center large-screen-padding">
             <h1><strong>Korry Tunnicliff</strong></h1>
-            <h3 className="name-subheader-1"><i>CU Boulder '23</i></h3>
-            <h3 className="name-subheader-2"><i>Computer Science BS</i></h3>
+            <h3 style={{fontSize: "4vh;"}} className="name-subheader-1"><i>CU Boulder '23</i></h3>
+            <h3 style={{fontSize: "4vh;"}} className="name-subheader-2"><i>Computer Science BS</i></h3>
             <br />
             <br />
           </Col>

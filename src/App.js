@@ -88,8 +88,47 @@ function App() {
       }
     })
   }
+
+  /*
+    Since fade-in is very costly for mobile Chrome users, we are going to disable it here
+  */
+  // https://stackoverflow.com/questions/4565112/javascript-how-to-find-out-if-the-user-browser-is-chrome
+  function isMobileChrome(){
+    var isChromium = window.chrome;
+    var winNav = window.navigator;
+    var vendorName = winNav.vendor;
+    var isOpera = typeof window.opr !== "undefined";
+    var isIEedge = winNav.userAgent.indexOf("Edg") > -1;
+    var isIOSChrome = winNav.userAgent.match("CriOS");
+    
+    var isChrome = false;
+    var isMobile = window.innerWidth < 768;
+
+    if (isIOSChrome) {
+       isChrome = true;
+    } else if(
+      isChromium !== null &&
+      typeof isChromium !== "undefined" &&
+      vendorName === "Google Inc." &&
+      isOpera === false &&
+      isIEedge === false
+    ) {
+      isChrome = true;
+    } else { 
+      isChrome = false;
+    }
+
+    return isChrome && isMobile;
+  }
   
-  window.addEventListener('scroll', handleScroll);
+  if (isMobileChrome()) {
+    const elements = document.querySelectorAll('.fade-in');
+    elements.forEach((element) => {
+      element.classList.remove('fade-in');
+    });
+  } else {
+    window.addEventListener('scroll', handleScroll);
+  }
 
   return (
     <div className="App">
@@ -129,5 +168,3 @@ function App() {
 }
 
 export default App;
-
-

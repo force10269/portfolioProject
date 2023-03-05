@@ -14,7 +14,7 @@ function AboutComponent() {
 
   return (
     <div id="about" className="full-page-panel-alternate">
-      <Container fluid style={{ paddingLeft: '10%', paddingRight: '5%' }}>
+      <Container fluid style={{ paddingLeft: '10%', paddingRight: '5%', paddingBottom: `${isMobile ? '12%' : '0%'}` }}>
         <Row>
           <Col xs={12} md={6} className="about-column text-left">
             <h1 className="fade-in text-center" id="about"><strong>About</strong></h1>
@@ -81,7 +81,7 @@ function AboutComponent() {
                 <div className="row justify-content-center align-items-center mb-15">
                   <div className="col-auto">
                     <a href={Resume} without rel="noopener noreferrer" target="_blank">
-                      <FaFilePdf className="fade-in" size={'5vw'}/>
+                      <FaFilePdf className="fade-in" size={'7vw'}/>
                     </a>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ function AboutComponent() {
                 <div className="row justify-content-center align-items-center mb-15">
                   <div className="col-auto">
                     <a href="https://www.linkedin.com/in/korry-tunnicliff" target="_blank" rel="noopener noreferrer">
-                      <FaLinkedin className="fade-in" size={'5vw'}/>
+                      <FaLinkedin className="fade-in" size={'7vw'}/>
                     </a>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ function AboutComponent() {
                 <div className="row justify-content-center align-items-center mb-15">
                   <div className="col-auto">
                     <a href="https://github.com/force10269" target="_blank" rel="noopener noreferrer">
-                      <FaGitSquare className="fade-in" size={'5vw'}/>
+                      <FaGitSquare className="fade-in" size={'7vw'}/>
                     </a>
                   </div>
                 </div>

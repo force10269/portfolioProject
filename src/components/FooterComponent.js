@@ -11,10 +11,10 @@ function FooterComponent() {
       <Container>
         <Row className="d-flex flex-column align-items-center">
           <div className="mb-3">
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="text-dark me-3">
+            <a href="https://www.linkedin.com/in/korry-tunnicliff" target="_blank" rel="noopener noreferrer" className="text-dark me-3">
               <FaLinkedin size={30} />
             </a>
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-dark me-3">
+            <a href="https://github.com/force10269" target="_blank" rel="noopener noreferrer" className="text-dark me-3">
               <FaGithub size={30} />
             </a>
             <a href={Resume} target="_blank" rel="noopener noreferrer" className="text-dark">
