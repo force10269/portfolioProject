@@ -1,4 +1,5 @@
 # My Portfolio
+![Portfolio name panel](https://raw.githubusercontent.com/force10269/portfolioProject/main/public/portfolio.png)
 
 ## Background
 
