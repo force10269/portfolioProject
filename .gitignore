@@ -2,6 +2,7 @@ node_modules
 portfolioProject
 .DS_Store
 .env
+public/env.js
 
 # Local Netlify folder
 .netlify

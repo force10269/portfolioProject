@@ -143,46 +143,59 @@ function App() {
   const navbarClass = `custom-navbar ${activeSection === 'name' ? 'navbar-big' : ''} ${isSmallScreen ? 'm-auto justify-content-center' : 'mr-auto'}`;
 
   // We use this for the first fraction of a second to give time for images to load
+  // The two useEffects serve in conjunction for loading screens on different browsers
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 200);
+    }, 750);
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsLoading(false);
+    };
+    window.addEventListener('load', handleLoad);
+    return () => window.removeEventListener('load', handleLoad);
+  }, []);
+  
   return (
-    isLoading ? <SpinnerComponent /> : 
     <div className="App">
-      <Navbar className={navbarClass} variant="dark" expand="lg" fixed="top">
-        <Nav.Link id="nameLink" href="#name" active={activeSection === 'name'}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#about" active={activeSection === 'about'}>About</Nav.Link>
-            <Nav.Link href="#experience" active={activeSection === 'experience'}>Experience</Nav.Link>
-            <Nav.Link href="#projects" active={activeSection === 'projects'}>Projects</Nav.Link>
-            <Nav.Link href="#contactMe" active={activeSection === 'contactMe'}>Contact&nbsp;Me</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      <div ref={nameRef}>
-        <NameComponent />
+      <div style={{display: isLoading ? "block" : "none"}}>
+        <SpinnerComponent />
       </div>
-      <div ref={aboutRef}>
-        <AboutComponent />
+      <div style={{opacity: isLoading ? "0.8" : "1"}}>
+        <Navbar className={navbarClass} variant="dark" expand="lg" fixed="top">
+          <Nav.Link id="nameLink" href="#name" active={activeSection === 'name'}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="#about" active={activeSection === 'about'}>About</Nav.Link>
+              <Nav.Link href="#experience" active={activeSection === 'experience'}>Experience</Nav.Link>
+              <Nav.Link href="#projects" active={activeSection === 'projects'}>Projects</Nav.Link>
+              <Nav.Link href="#contactMe" active={activeSection === 'contactMe'}>Contact&nbsp;Me</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <div ref={nameRef}>
+          <NameComponent />
+        </div>
+        <div ref={aboutRef}>
+          <AboutComponent />
+        </div>
+        <div ref={experienceRef}>
+          <ExperienceComponent />
+        </div>
+        <div ref={projectsRef}>
+          <ProjectsComponent />
+        </div>
+        <div ref={contactMeRef}>
+          <ContactMeComponent />
+        </div>
+        <FooterComponent />
       </div>
-      <div ref={experienceRef}>
-        <ExperienceComponent />
-      </div>
-      <div ref={projectsRef}>
-        <ProjectsComponent />
-      </div>
-      <div ref={contactMeRef}>
-        <ContactMeComponent />
-      </div>
-      <FooterComponent />
     </div>
   );
 }

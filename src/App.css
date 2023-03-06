@@ -38,7 +38,7 @@
 }
 
 html {
-  background-color: #0D1B2A;
+  background-color: #0D1B2A !important;
 }
 
 .full-page-panel {
