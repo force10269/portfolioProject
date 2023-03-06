@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect, useRef } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import SpinnerComponent from './components/SpinnerComponent';
 import NameComponent from './components/NameComponent';
 import AboutComponent from './components/AboutComponent';
 import ExperienceComponent from './components/ExperienceComponent';
@@ -67,27 +68,6 @@ function App() {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
-  
-  function handleScroll() {
-    const elements = document.querySelectorAll('.fade-in');
-    elements.forEach((el) => {
-      if (isElementInViewport(el)) {
-        el.classList.add('fade-in-active');
-      } else {
-        el.classList.remove('fade-in-active');
-      }
-    });
-
-    // We also query for the cards in experiences to fade in and out
-    const experiences = document.querySelectorAll('.experience-card');
-    experiences.forEach((ex) => {
-      if (isElementInViewport(ex)) {
-        ex.classList.add('experience-card-active');
-      }else{
-        ex.classList.remove('experience-card-active');
-      }
-    })
-  }
 
   /*
     Since fade-in is very costly for mobile Chrome users, we are going to disable it here
@@ -121,16 +101,32 @@ function App() {
     return isChrome && isMobile;
   }
   
-  if (isMobileChrome()) {
+  function handleScroll() {
     const elements = document.querySelectorAll('.fade-in');
-    elements.forEach((element) => {
-      element.classList.remove('fade-in');
+    elements.forEach((el) => {
+      // Disables fade-in when we either are seeing the element, or if we have a mobile user on Chrome
+      if (isElementInViewport(el) || isMobileChrome()) {
+        el.classList.add('fade-in-active');
+      } else {
+        el.classList.remove('fade-in-active');
+      }
     });
-  } else {
-    window.addEventListener('scroll', handleScroll);
+
+    // We also query for the cards in experiences to fade in and out
+    const experiences = document.querySelectorAll('.experience-card');
+    experiences.forEach((ex) => {
+      if (isElementInViewport(ex)) {
+        ex.classList.add('experience-card-active');
+      }else{
+        ex.classList.remove('experience-card-active');
+      }
+    })
   }
 
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+  // Handles fade-in classes
+  window.addEventListener('scroll', handleScroll);
+
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 992);
 
   useEffect(() => {
     function handleResize() {
@@ -146,12 +142,20 @@ function App() {
 
   const navbarClass = `custom-navbar ${activeSection === 'name' ? 'navbar-big' : ''} ${isSmallScreen ? 'm-auto justify-content-center' : 'mr-auto'}`;
 
+  // We use this for the first fraction of a second to give time for images to load
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 200);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
+    isLoading ? <SpinnerComponent /> : 
     <div className="App">
       <Navbar className={navbarClass} variant="dark" expand="lg" fixed="top">
-        {/*<Navbar.Brand href="#name">
-          <span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff &nbsp;</span>
-        </Navbar.Brand>*/}
         <Nav.Link id="nameLink" href="#name" active={activeSection === 'name'}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

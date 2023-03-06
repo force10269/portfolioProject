@@ -30,11 +30,11 @@ function NameComponent() {
   }, []);
 
   return (
-    <div id="name" className="full-page-panel">
+    <div id="nameC" className="full-page-panel">
       <Container fluid style={{ paddingLeft: "15%", paddingRight: "15%" }}>
         <Row>
           <Col md={6} style={{paddingTop: "5%" }}>
-            <img src={headshot} alt="Headshot" className="headshot"/>
+            <img src={headshot} alt="Headshot" className="headshot" loading="lazy"/>
           </Col>
           <Col md={6} className="align-items-center" style={{
                 display: "flex",
@@ -50,6 +50,7 @@ function NameComponent() {
           </Col>
         </Row>
       </Container>
+      <br />
       <div className="scroll-prompt">
           <AiOutlineArrowDown/>
       </div>

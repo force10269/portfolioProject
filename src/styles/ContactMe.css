@@ -12,6 +12,7 @@
     .form-field-left,
     .form-field-right {
         margin: 0 auto;
+        margin-top: 2%;
     }
     .form-field-left {
         width: 100%;

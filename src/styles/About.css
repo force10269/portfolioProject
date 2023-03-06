@@ -1,3 +1,21 @@
+#about {
+    background-image: url('../assets/gitProfilePic.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0D1B2A;
+    opacity: 0.94;
+}
+
 .icon-row {
     padding: 8vh 0;
 }  

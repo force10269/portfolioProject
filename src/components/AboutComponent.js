@@ -17,16 +17,17 @@ function AboutComponent() {
       <Container fluid style={{ paddingLeft: '10%', paddingRight: '5%', paddingBottom: `${isMobile ? '12%' : '0%'}` }}>
         <Row>
           <Col xs={12} md={6} className="about-column text-left">
-            <h1 className="fade-in text-center" id="about"><strong>About</strong></h1>
+            <h1 className="fade-in text-center"><strong>About</strong></h1>
             <div>
               <h3 className="fade-in">&nbsp; &nbsp; &nbsp; &nbsp; I am a Computer Science student at the University of Colorado Boulder. 
-              As of now, I have a GPA of 3.73, and my coursework so far at CU Boulder has included:</h3>
+              I currently have a 3.73 GPA and, to date, my coursework at CU Boulder has included: </h3>
               <br /> 
               <div className="fade-in" style={{columnCount: 2}}>
                 <div>
                   <h4><i>- Software Development</i><br /></h4>
                   <h4><i>- Algorithms</i><br /></h4>
                   <h4><i>- Differential Equations</i><br /></h4>
+                  <h4><i>- Operating Systems</i></h4>
                 </div>
                 <div>
                   <h4><i>- Linear Algebra</i></h4>
@@ -36,7 +37,7 @@ function AboutComponent() {
                 </div>
               </div>
               <br />
-              <h3 className="fade-in">&nbsp; &nbsp; &nbsp; &nbsp; I love software development, and am currently searching for a position as a Software Engineer! </h3>
+              <h3 className="fade-in">&nbsp; &nbsp; &nbsp; &nbsp; I am passionate about software development, and am currently searching for a position as a Software Engineer! I am highly motivated, and am excited to see which team I will end up working with.</h3>
             </div>
           </Col>
 

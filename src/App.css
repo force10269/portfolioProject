@@ -211,6 +211,7 @@ html {
 
 .custom-navbar .navbar-collapse {
   background-color: #0D1B2A;
+  padding-bottom: 1.5vh;
 }
 .custom-navbar .navbar-nav .nav-link {
   color: #E0E1DD;
