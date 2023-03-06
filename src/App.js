@@ -140,7 +140,7 @@ function App() {
       </div>
       <div style={{opacity: isLoading ? "0.8" : "1"}}>
         <Navbar className={navbarClass} variant="dark" expand="lg" fixed="top">
-          <Nav.Link id="nameLink" href="#name" active={activeSection === 'name'}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
+          <Nav.Link id="nameLink" href="#nameC" active={activeSection === 'name'}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
