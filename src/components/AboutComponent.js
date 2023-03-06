@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Resume from '../assets/resume.pdf'
 import { FaGitSquare, FaLinkedin, FaFilePdf} from 'react-icons/fa';
+import { isMobileOnly } from 'react-device-detect';
 
 function AboutComponent() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -11,6 +12,17 @@ function AboutComponent() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   });
+
+  // For some odd reason, doing this in our App.js file does not affect this component
+  // For right now, the bandaid solution is to copy the code here
+  useEffect(() => {
+    if (isMobileOnly) {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach((el) => {
+        el.classList.remove('fade-in');
+      });
+    }
+  }, []);
 
   return (
     <div id="about" className="full-page-panel-alternate">

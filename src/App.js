@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect, useRef } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { isMobileOnly } from 'react-device-detect';
 import SpinnerComponent from './components/SpinnerComponent';
 import NameComponent from './components/NameComponent';
 import AboutComponent from './components/AboutComponent';
@@ -72,40 +73,11 @@ function App() {
   /*
     Since fade-in is very costly for mobile Chrome users, we are going to disable it here
   */
-  // https://stackoverflow.com/questions/4565112/javascript-how-to-find-out-if-the-user-browser-is-chrome
-  function isMobileChrome(){
-    var isChromium = window.chrome;
-    var winNav = window.navigator;
-    var vendorName = winNav.vendor;
-    var isOpera = typeof window.opr !== "undefined";
-    var isIEedge = winNav.userAgent.indexOf("Edg") > -1;
-    var isIOSChrome = winNav.userAgent.match("CriOS");
-    
-    var isChrome = false;
-    var isMobile = window.innerWidth < 768;
-
-    if (isIOSChrome) {
-       isChrome = true;
-    } else if(
-      isChromium !== null &&
-      typeof isChromium !== "undefined" &&
-      vendorName === "Google Inc." &&
-      isOpera === false &&
-      isIEedge === false
-    ) {
-      isChrome = true;
-    } else { 
-      isChrome = false;
-    }
-
-    return isChrome && isMobile;
-  }
-  
   function handleScroll() {
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach((el) => {
       // Disables fade-in when we either are seeing the element, or if we have a mobile user on Chrome
-      if (isElementInViewport(el) || isMobileChrome()) {
+      if (isElementInViewport(el) || isMobileOnly) {
         el.classList.add('fade-in-active');
       } else {
         el.classList.remove('fade-in-active');
