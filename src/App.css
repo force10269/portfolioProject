@@ -163,7 +163,7 @@ html {
   transition: font-size 0.5s ease-in-out, letter-spacing 0.5s ease-in-out;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1025px) {
   .brand-text-big {
     font-size: 2vh;
   }

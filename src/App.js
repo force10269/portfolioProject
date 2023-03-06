@@ -98,11 +98,11 @@ function App() {
   // Handles fade-in classes
   window.addEventListener('scroll', handleScroll);
 
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 992);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1025);
 
   useEffect(() => {
     function handleResize() {
-      setIsSmallScreen(window.innerWidth < 992);
+      setIsSmallScreen(window.innerWidth < 1025);
     }
 
     window.addEventListener('resize', handleResize);

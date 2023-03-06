@@ -9,6 +9,14 @@ body {
     background-size: cover;
 }
 
+#nameC h1 {
+    font-size: 6vh;
+}
+
+#nameC h3 {
+    font-size: 4vh;
+}
+
 #nameC::before {
     content: '';
     position: absolute;
@@ -51,42 +59,55 @@ h4:hover {
     font-size: 3vw;
   }
   
-  .scroll-prompt:hover {
+.scroll-prompt:hover {
     background-color: #0d1b2a;
     height: 6vh;
     transition: background-color 0.2s ease-in-out, height 0.2s ease-in-out;
-  }
-  
-  .scroll-prompt:hover > svg {
+}
+
+.scroll-prompt:hover > svg {
     color: #96d0e3;
-  }
+}
 
 .right-column {
     margin-top: 50vh;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1025px) {
     .large-screen-padding {
       padding-top: 20vh;
     }
 }
 
-@media screen and (max-width: 992px) {
-    #name h1 {
+@media screen and (max-width: 1025px) {
+    #nameC h1 {
         font-size: 5.5vh;
-        padding-top: 15vh;
     }
-    #name h3 {
+    #nameC h3 {
         font-size: 4vh;
+    }
+
+    .headshot {
+        max-width: 100vw;
     }
 }
   
 @media screen and (max-width: 768px) {
-    #name h1 {
+    #nameC h1 {
         font-size: 4.5vh;
         padding-top: 0vh;
     }
-    #name h3 {
+    #nameC h3 {
         font-size: 3vh;
+    }
+
+    .headshot {
+        max-width: 40vw;
+    }
+}
+
+@media screen and (max-width: 544px) {
+    .headshot {
+        max-width: 60vw;
     }
 }
