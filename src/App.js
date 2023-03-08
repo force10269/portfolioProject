@@ -14,6 +14,8 @@ function App() {
   // Most of this code is setting up a scroll listener for our navbar
   const [activeSection, setActiveSection] = useState('name');
 
+  const scrollOffset = 200;
+
   // All refs that point to different section components
   const nameRef = useRef(null);
   const aboutRef = useRef(null);
@@ -27,10 +29,10 @@ function App() {
     
     // In order for the automatic highlight on the navbar to work, we need to add this offset
     const nameTop = nameRef.current.offsetTop;
-    const aboutTop = aboutRef.current.offsetTop - 200;
-    const experienceTop = experienceRef.current.offsetTop - 200;
-    const projectsTop = projectsRef.current.offsetTop - 200;
-    const contactMeTop = contactMeRef.current.offsetTop - 200;
+    const aboutTop = aboutRef.current.offsetTop - scrollOffset;
+    const experienceTop = experienceRef.current.offsetTop - scrollOffset;
+    const projectsTop = projectsRef.current.offsetTop - scrollOffset;
+    const contactMeTop = contactMeRef.current.offsetTop - scrollOffset;
 
     const inName = (nameTop <= pos && pos < aboutTop);
     const inAbout = (aboutTop <= pos && pos < experienceTop);
@@ -58,6 +60,16 @@ function App() {
       window.removeEventListener('scroll', scrollListener);
     }
   }, []);
+
+  // These functions are for scrolling to each section without changing the URL with an /#{sectionID}
+  function scrollTo(e, sectionName){
+    e.preventDefault();
+    const section = document.getElementById(sectionName); // Get the section element by ID
+    window.scrollTo({
+      top: section.offsetTop - (sectionName === "nameC" ? 0 : 75), // Scroll to the section's offset top
+      behavior: "smooth" // Add smooth scrolling behavior
+    });
+  }
 
   // This is for fade-in classes when the user is scrolling
   function isElementInViewport(el) {
@@ -132,7 +144,7 @@ function App() {
     window.addEventListener('load', handleLoad);
     return () => window.removeEventListener('load', handleLoad);
   }, []);
-  
+
   return (
     <div className="App">
       <div style={{display: isLoading ? "block" : "none"}}>
@@ -140,14 +152,14 @@ function App() {
       </div>
       <div style={{opacity: isLoading ? "0.8" : "1"}}>
         <Navbar className={navbarClass} variant="dark" expand="lg" fixed="top">
-          <Nav.Link id="nameLink" href="#nameC" active={activeSection === 'name'}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
+          <Nav.Link id="nameLink" href="#nameC" active={activeSection === 'name'} onClick={(e) => scrollTo(e, "nameC")}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#about" active={activeSection === 'about'}>About</Nav.Link>
-              <Nav.Link href="#experience" active={activeSection === 'experience'}>Experience</Nav.Link>
-              <Nav.Link href="#projects" active={activeSection === 'projects'}>Projects</Nav.Link>
-              <Nav.Link href="#contactMe" active={activeSection === 'contactMe'}>Contact&nbsp;Me</Nav.Link>
+              <Nav.Link href="#about" active={activeSection === 'about'} onClick={(e) => scrollTo(e, "about")}>About</Nav.Link>
+              <Nav.Link href="#experience" active={activeSection === 'experience'} onClick={(e) => scrollTo(e, "experience")}>Experience</Nav.Link>
+              <Nav.Link href="#projects" active={activeSection === 'projects'} onClick={(e) => scrollTo(e, "projects")}>Projects</Nav.Link>
+              <Nav.Link href="#contactMe" active={activeSection === 'contactMe'} onClick={(e) => scrollTo(e, "contactMe")}>Contact&nbsp;Me</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
