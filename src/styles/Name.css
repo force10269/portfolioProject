@@ -37,7 +37,7 @@ body {
 }
 
 .headshot:hover {
-    transform: translate(0, 3vw);
+    transform: translate(0, -1vw);
 }
 
 h1, h2, h3, h4 {

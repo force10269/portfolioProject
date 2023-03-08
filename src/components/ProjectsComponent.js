@@ -18,14 +18,14 @@ function ProjectCard(props) {
 
 function ProjectsComponent() {
   return (
-    <div id="projects" className="projects-section">
+    <div id="projects" className="full-page-panel" style={{paddingTop: "5vh", paddingBottom: "5vh"}}>
       <Container className="py-5" fluid style={{ paddingLeft: '10%', paddingRight: '10%' }}>
       <h1 className="text-center mb-5 fade-in" style={{fontSize: '7vw'}}><strong>Projects</strong></h1>
         <br />
         <Row className="justify-content-center">
           <Col md={5} className="text-center">
             <ProjectCard imgSrc={project1Img}/>
-            <h1 className="fade-in">Dynein Protein Analysis</h1>
+            <h1 className="fade-in">Dynein Analysis</h1>
             <p className="fade-in">Using Python scripts which utilize the OpenCV library and the ImageJ interface to perform an analysis of cell images containing dynein proteins.</p>
             <a href="https://www.github.com/force10269/DyneinProtein" target="_blank" rel="noopener noreferrer">
               <FaGithub className="fade-in" size={'5vw'} />

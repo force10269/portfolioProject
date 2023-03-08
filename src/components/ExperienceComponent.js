@@ -65,9 +65,9 @@ function ExperienceComponent() {
 
 
   return (
-    <div id="experience" className="bg-light">
+    <div id="experience" className="full-page-panel-alternate">
       <Container className="py-5" fluid style={{ paddingLeft: '10%', paddingRight: '10%' }}>
-        <h1 className="text-center mb-5 fade-in" style={{ fontSize: '5vh' }}>Experience</h1>
+        <h1 className="text-center mb-5 fade-in" style={{ fontSize: '7vh' }}>Experience</h1>
         {experiences.map((experience, index) => (
           <Row
             key={index}

@@ -6,7 +6,7 @@ import Resume from '../assets/resume.pdf';
 
 function FooterComponent() {
   return (
-    <footer className="bg-light mt-5">
+    <footer className="mt-5">
       <br />
       <Container>
         <Row className="d-flex flex-column align-items-center">

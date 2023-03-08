@@ -24,11 +24,25 @@ function AboutComponent() {
     }
   }, []);
 
+  const iconSize = 70;
+  const iconSizeBig = 30;
+
   return (
     <div id="about" className="full-page-panel-alternate">
-      <Container fluid style={{ paddingLeft: '10%', paddingRight: '5%', paddingBottom: `${isMobile ? '12%' : '0%'}` }}>
+      <Container fluid style={{ 
+          paddingLeft: '10%', 
+          paddingRight: '5%', 
+          paddingBottom: `${isMobile ? '12%' : '0%'}`, 
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center"}}
+        >
         <Row>
           <Col xs={12} md={6} className="about-column text-left">
+            {isMobileOnly && window.innerWidth > 800 && <div>
+              <br /><br /><br />
+            </div>}
             <h1 className="fade-in text-center"><strong>About</strong></h1>
             <div>
               <h3 className="fade-in">&nbsp; &nbsp; &nbsp; &nbsp; I am a Computer Science student at the University of Colorado Boulder. 
@@ -54,12 +68,17 @@ function AboutComponent() {
           </Col>
 
           {!isMobile && 
-          <Col xs={12} md={6} className="my-5">
+          <Col xs={12} md={6} className="my-5" style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
             <h1 className="fade-in" style={{ fontSize: '3vw' }}><i>Resume:</i></h1>
             <div className="row justify-content-center align-items-center mb-15">
               <div className="col-auto">
                 <a href={Resume} without rel="noopener noreferrer" target="_blank">
-                  <FaFilePdf className="fade-in" size={'5vw'}/>
+                  <FaFilePdf className="fade-in" size={iconSize}/>
                 </a>
               </div>
             </div> 
@@ -69,7 +88,7 @@ function AboutComponent() {
             <div className="row justify-content-center align-items-center mb-15">
               <div className="col-auto">
                 <a href="https://www.linkedin.com/in/korry-tunnicliff" target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin className="fade-in" size={'5vw'}/>
+                    <FaLinkedin className="fade-in" size={iconSize}/>
                 </a>
               </div>
             </div>
@@ -79,14 +98,19 @@ function AboutComponent() {
             <div className="row justify-content-center align-items-center mb-15">
               <div className="col-auto">
                 <a href="https://github.com/force10269" target="_blank" rel="noopener noreferrer">
-                  <FaGitSquare className="fade-in" size={'5vw'}/>
+                  <FaGitSquare className="fade-in" size={iconSize}/>
                 </a>
               </div>
             </div>
           </Col>}
 
           {isMobile && 
-          <Col>
+          <Col style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
             <br /><br />
             <div className="d-flex justify-content-center">
               <div className="d-flex align-items-center mx-4">
@@ -94,7 +118,7 @@ function AboutComponent() {
                 <div className="row justify-content-center align-items-center mb-15">
                   <div className="col-auto">
                     <a href={Resume} without rel="noopener noreferrer" target="_blank">
-                      <FaFilePdf className="fade-in" size={'7vw'}/>
+                      <FaFilePdf className="fade-in" size={iconSizeBig}/>
                     </a>
                   </div>
                 </div>
@@ -104,7 +128,7 @@ function AboutComponent() {
                 <div className="row justify-content-center align-items-center mb-15">
                   <div className="col-auto">
                     <a href="https://www.linkedin.com/in/korry-tunnicliff" target="_blank" rel="noopener noreferrer">
-                      <FaLinkedin className="fade-in" size={'7vw'}/>
+                      <FaLinkedin className="fade-in" size={iconSizeBig}/>
                     </a>
                   </div>
                 </div>
@@ -114,7 +138,7 @@ function AboutComponent() {
                 <div className="row justify-content-center align-items-center mb-15">
                   <div className="col-auto">
                     <a href="https://github.com/force10269" target="_blank" rel="noopener noreferrer">
-                      <FaGitSquare className="fade-in" size={'7vw'}/>
+                      <FaGitSquare className="fade-in" size={iconSizeBig}/>
                     </a>
                   </div>
                 </div>

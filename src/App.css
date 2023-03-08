@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow-y: hidden;
 }
 
 .App-logo {
@@ -42,7 +43,7 @@ html {
 }
 
 .full-page-panel {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +54,7 @@ html {
 }
 
 .full-page-panel-alternate {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -165,11 +166,11 @@ html {
 
 @media (max-width: 1025px) {
   .brand-text-big {
-    font-size: 2vh;
+    font-size: 1.5vh;
   }
 
   .brand-text {
-    font-size: 1.5vh;
+    font-size: 1vh;
   }
 
   .nav-link:hover::after,

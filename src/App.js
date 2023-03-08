@@ -1,9 +1,10 @@
 import './App.css';
-import { useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect, useRef } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { isMobileOnly } from 'react-device-detect';
 import SpinnerComponent from './components/SpinnerComponent';
 import NameComponent from './components/NameComponent';
+import SkillsComponent from './components/SkillsComponent';
 import AboutComponent from './components/AboutComponent';
 import ExperienceComponent from './components/ExperienceComponent';
 import ProjectsComponent from './components/ProjectsComponent';
@@ -19,6 +20,8 @@ function App() {
   // All refs that point to different section components
   const nameRef = useRef(null);
   const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+
   const experienceRef = useRef(null);
   const projectsRef = useRef(null);
   const contactMeRef = useRef(null);
@@ -30,18 +33,22 @@ function App() {
     // In order for the automatic highlight on the navbar to work, we need to add this offset
     const nameTop = nameRef.current.offsetTop;
     const aboutTop = aboutRef.current.offsetTop - scrollOffset;
+    const skillsTop = skillsRef.current.offsetTop - scrollOffset;
     const experienceTop = experienceRef.current.offsetTop - scrollOffset;
     const projectsTop = projectsRef.current.offsetTop - scrollOffset;
     const contactMeTop = contactMeRef.current.offsetTop - scrollOffset;
 
     const inName = (nameTop <= pos && pos < aboutTop);
-    const inAbout = (aboutTop <= pos && pos < experienceTop);
+    const inAbout = (aboutTop <= pos && pos < skillsTop);
+    const inSkills = (skillsTop <= pos && pos < experienceTop);
     const inExperience = (experienceTop <= pos && pos < projectsTop);
     const inProjects = (projectsTop <= pos && pos < contactMeTop);
     const inContactMe = (contactMeTop <= pos);
 
     if(inName) {
       setActiveSection('name');
+    }else if(inSkills){
+      setActiveSection('skills');
     }else if(inAbout) {
       setActiveSection('about');
     }else if(inExperience){
@@ -74,12 +81,13 @@ function App() {
   // This is for fade-in classes when the user is scrolling
   function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+    const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+    const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+  
+    const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+    const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+  
+    return (vertInView && horInView);
   }
 
   /*
@@ -95,20 +103,13 @@ function App() {
         el.classList.remove('fade-in-active');
       }
     });
-
-    // We also query for the cards in experiences to fade in and out
-    const experiences = document.querySelectorAll('.experience-card');
-    experiences.forEach((ex) => {
-      if (isElementInViewport(ex)) {
-        ex.classList.add('experience-card-active');
-      }else{
-        ex.classList.remove('experience-card-active');
-      }
-    })
   }
 
   // Handles fade-in classes
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', () => {
+    scrollListener();
+    handleScroll();
+  });
 
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1025);
 
@@ -157,6 +158,7 @@ function App() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="#about" active={activeSection === 'about'} onClick={(e) => scrollTo(e, "about")}>About</Nav.Link>
+              <Nav.Link href="#skills" active={activeSection === 'skills'} onClick={(e) => scrollTo(e, "skills")}>Skills</Nav.Link>
               <Nav.Link href="#experience" active={activeSection === 'experience'} onClick={(e) => scrollTo(e, "experience")}>Experience</Nav.Link>
               <Nav.Link href="#projects" active={activeSection === 'projects'} onClick={(e) => scrollTo(e, "projects")}>Projects</Nav.Link>
               <Nav.Link href="#contactMe" active={activeSection === 'contactMe'} onClick={(e) => scrollTo(e, "contactMe")}>Contact&nbsp;Me</Nav.Link>
@@ -168,6 +170,9 @@ function App() {
         </div>
         <div ref={aboutRef}>
           <AboutComponent />
+        </div>
+        <div ref={skillsRef}>
+          <SkillsComponent />
         </div>
         <div ref={experienceRef}>
           <ExperienceComponent />

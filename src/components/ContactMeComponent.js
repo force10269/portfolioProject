@@ -28,10 +28,8 @@ function ContactMe() {
   }
 
   return (
-    <div id="contactMe">
-      <br />
-      <br />
-      <h1 style={{ fontSize: "7vw" }}>
+    <div id="contactMe" className="full-page-panel-alternate">
+      <h1 style={{ fontSize: "5vw" }}>
         <strong>Contact Me!</strong>
       </h1>
       <p>
