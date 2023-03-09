@@ -51,22 +51,28 @@ h4:hover {
     transform: translate(0, -1.5vw);
 }
 
+#space {
+    margin-top: 20vh;
+}
+
 .scroll-prompt {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #96d0e3;
-    font-size: 3vw;
-  }
-  
-.scroll-prompt:hover {
-    background-color: #0d1b2a;
-    height: 6vh;
-    transition: background-color 0.2s ease-in-out, height 0.2s ease-in-out;
+    position: relative;
 }
 
-.scroll-prompt:hover > svg {
-    color: #96d0e3;
+#scroll-icon {
+    color: #FFFAFF;
+    font-size: 5vh;
+    height: 4vw;
+    border-radius: 20vw/20vw;
+}
+
+#scroll-icon:hover {
+    color: #94e4ff;
+    background-color: #0D1B2A;
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
 }
 
 .right-column {

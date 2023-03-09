@@ -6,9 +6,8 @@ import Resume from '../assets/resume.pdf';
 
 function FooterComponent() {
   return (
-    <footer className="mt-5">
-      <br />
-      <Container>
+    <footer id="footer" className="mt-5">
+       <Container>
         <Row className="d-flex flex-column align-items-center">
           <div className="mb-3">
             <a href="https://www.linkedin.com/in/korry-tunnicliff" target="_blank" rel="noopener noreferrer" className="text-dark me-3">

@@ -8,6 +8,16 @@ function NameComponent() {
   const [isSmall, setIsSmallScreen] = useState(window.innerWidth < 1025);
   const [isVerySmall, setIsVerySmallScreen] = useState(window.innerWidth < 768);
 
+    // These functions are for scrolling to each section without changing the URL with an /#{sectionID}
+    function scrollTo(e, sectionName){
+      e.preventDefault();
+      const section = document.getElementById(sectionName); // Get the section element by ID
+      window.scrollTo({
+        top: section.offsetTop - (sectionName === "nameC" ? 0 : 75), // Scroll to the section's offset top
+        behavior: "smooth" // Add smooth scrolling behavior
+      });
+    }
+
   useEffect(() => {
     function handleResize() {
       setIsSmallScreen(window.innerWidth < 1025);
@@ -23,7 +33,7 @@ function NameComponent() {
 
   return (
     <div id="nameC" className="full-page-panel">
-      <Container fluid style={{ paddingLeft: "15%", paddingRight: "15%" }}>
+      <Container fluid style={{ paddingLeft: "15%", paddingRight: "15%"}}>
         <Row>
           <Col md={6} style={{paddingTop: `${isVerySmall ? '30%' : `${isSmall ? '0%' : '10%'}`}`}}>
             <img src={headshot} alt="Headshot" className="headshot"/>
@@ -38,14 +48,16 @@ function NameComponent() {
             <h3 id="head2" className="name-subheader-1"><i>CU Boulder '23</i></h3>
             <h3 id="head3" className="name-subheader-2"><i>Computer Science BS</i></h3>
             <br />
-            <br />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <div className="scroll-prompt">
+              <a href="#about" onClick={((e) => scrollTo(e, "about"))}><AiOutlineArrowDown id="scroll-icon" href="#about"/></a>
+            </div>
           </Col>
         </Row>
       </Container>
-      <br />
-      <div className="scroll-prompt">
-          <AiOutlineArrowDown/>
-      </div>
     </div>
   );
 }

@@ -151,7 +151,7 @@ function App() {
       <div style={{display: isLoading ? "block" : "none"}}>
         <SpinnerComponent />
       </div>
-      <div style={{opacity: isLoading ? "0.8" : "1"}}>
+      <div style={{opacity: isLoading ? "0.8" : "1", backgroundColor: "#FFFAFF"}}>
         <Navbar className={navbarClass} variant="dark" expand="lg" fixed="top">
           <Nav.Link id="nameLink" href="#nameC" active={activeSection === 'name'} onClick={(e) => scrollTo(e, "nameC")}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

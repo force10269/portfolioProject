@@ -12,6 +12,7 @@ function LanguagesComponent(props) {
     return (
         <>
         <h3 className="mb-3 fade-in" style={{paddingRight: `${props.isSmall ? '0vw' : '1.5vw'}`}}>Languages</h3>
+        {props.isSmall ? <><br/></> : <></> }
         <div className="skill-icon">
             <FaHtml5 size={props.iconSize/2} />
             <FaCss3 size={props.iconSize/2} />
@@ -45,6 +46,7 @@ function FrontBackComponent(props) {
     return (
         <>
         <h3 className="mb-3 fade-in">Frameworks</h3>
+        {props.isSmall ? <><br/></> : <></> }
         <div className="fe-icon">
             <FaReact size={props.iconSize}/>
             <p>React</p>
@@ -76,11 +78,11 @@ function FrontBackComponent(props) {
 function SkillsComponent() {
     const iconSize = 64;
 
-    const [isSmall, setIsSmallScreen] = useState(window.innerWidth < 1025);
+    const [isSmall, setIsSmallScreen] = useState(window.innerWidth < 768);
 
     useEffect(() => {
       function handleResize() {
-        setIsSmallScreen(window.innerWidth < 1025);
+        setIsSmallScreen(window.innerWidth < 768);
       }
   
       window.addEventListener('resize', handleResize);
@@ -116,7 +118,6 @@ function SkillsComponent() {
                         </div>
                         </>
                     )}
-
                 </Row>
             </Container>
         </div>

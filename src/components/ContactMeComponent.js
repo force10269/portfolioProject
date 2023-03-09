@@ -79,7 +79,10 @@ function ContactMe() {
               </Form.Group>
             </Col>
             <Col md={6}>
-              <Form.Group controlId="message">
+              <Form.Group controlId="message" style={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}>
                 <Form.Control
                   as="textarea"
                   rows={Math.max(3, Math.ceil(message.length / 50))}
