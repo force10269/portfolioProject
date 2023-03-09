@@ -29,3 +29,10 @@
 .skill-icon:hover, .fe-icon:hover {
     transform: translate(0, -1vh);
 }
+
+@media (min-width: 1025px) {
+    .skill-icon, .fe-icon {
+        width: 50%;
+        padding: 0 10px;
+    }
+}
