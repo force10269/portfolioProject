@@ -45,7 +45,7 @@ function AboutRight(props) {
         <h1 className="fade-in" style={{ fontSize: '3vw' }}><i>Resume</i></h1>
         <div className="row justify-content-center align-items-center mb-15">
           <div className="col-auto">
-            <a href={Resume} without rel="noopener noreferrer" target="_blank">
+            <a href={Resume} rel="noopener noreferrer" target="_blank">
               <FaFilePdf className="fade-in" size={props.iconSize}/>
             </a>
           </div>

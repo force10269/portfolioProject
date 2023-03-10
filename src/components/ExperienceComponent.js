@@ -8,7 +8,7 @@ function ExperienceComponent() {
       <Container className="py-5" fluid style={{ paddingLeft: '10%', paddingRight: '10%' }}>
         <h1 className="text-center mb-5 fade-in" style={{ fontSize: '7vh' }}>Experience</h1>
         {ExperienceData.map((experience, index) => (
-          <Row className={`mb-5 align-items-center`}>
+          <Row key={experience.key} className={`mb-5 align-items-center`}>
             <div className='experience-card fade-in' style={{ width: '100%' }}>
               <Col md={4} style={{
                 display: "flex",

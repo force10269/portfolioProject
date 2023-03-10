@@ -230,7 +230,7 @@ html {
   #nameLink {
     display: flex;
     justify-content: center;
-    margin-left: 0%;
+    margin-left: 5%;
   }
 
   .custom-navbar {

@@ -26,9 +26,10 @@ function ProjectsComponent() {
         <br />
         <Row className="justify-content-center">
           {ProjectData.map((project) => (
-            <Col md={5} className="text-center">
+            <Col key={project.key} md={5} className="text-center">
               <ProjectCard
                 imgSrc={project.imgSrc}
+                title={project.title}
                 githubLink={project.githubLink}
               />
               <h1 className="fade-in">{project.title}</h1>

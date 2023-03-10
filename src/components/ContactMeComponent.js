@@ -96,7 +96,7 @@ function ContactMe() {
             </Col>
           </Row>
           <br/>
-          <Button variant="primary" type="submit" block>
+          <Button variant="primary" type="submit" block="true">
             Submit
           </Button>
         </Form>

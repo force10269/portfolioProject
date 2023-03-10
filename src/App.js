@@ -22,8 +22,7 @@ function App() {
       experienceRef,
       projectsRef,
       contactMeRef,
-      activeSection, 
-      NavbarListenerFunction
+      activeSection,
     ] = NavbarListener();
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1025);
     const [isTinyScreen, setIsTinyScreen] = useState(window.innerWidth < 768);
@@ -53,7 +52,6 @@ function App() {
 
         window.addEventListener('load', handleLoad);
         window.addEventListener('scroll', () => {
-            NavbarListenerFunction();
             if(!isMobileOnly) {
               FadeListener();
             }
