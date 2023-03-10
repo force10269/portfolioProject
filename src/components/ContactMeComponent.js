@@ -29,8 +29,9 @@ function ContactMe() {
 
   return (
     <div id="contactMe" className="full-page-panel-alternate">
+      {window.innerHeight <= window.innerWidth && <><br /></>}
       <h1 style={{ fontSize: "5vw" }}>
-        <strong>Contact Me!</strong>
+        <strong id="contact-header">Contact Me!</strong>
       </h1>
       <p>
         <u>Email:</u> korry.tunnicliff@colorado.edu

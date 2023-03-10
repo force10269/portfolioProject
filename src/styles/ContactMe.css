@@ -9,13 +9,6 @@
     height: 20vh;
 }
 
-/* This is for landscape mode */
-@media (max-height: 389px) and (max-width: 843px) {
-    .form-field-right {
-        height: 16vw;
-    }
-}
-
 @media screen and (min-width: 992px) {
     .form-field-right {
         margin: 2.5% 0%;
@@ -40,5 +33,12 @@
     .form-field-right {
         width: 100%;
         height: 25vh;
+    }
+}
+
+/* This is for landscape mode */
+@media (max-height: 389px) and (max-width: 843px) {
+    .form-field-right {
+        height: 16vw;
     }
 }

@@ -142,7 +142,6 @@ html {
 .navbar-brand {
   font-family: 'Pacifico', cursive;
   color: #FFFAFF;
-  margin-left: 11%;
   font-size: 2.5vh;
 }
 
@@ -162,39 +161,6 @@ html {
   text-transform: uppercase;
   letter-spacing: 0.2vw;
   transition: font-size 0.5s ease-in-out, letter-spacing 0.5s ease-in-out;
-}
-
-@media (max-width: 1025px) {
-  .brand-text-big {
-    font-size: 2vh;
-  }
-
-  .brand-text {
-    font-size: 1.5vh;
-  }
-
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    width: 20%;
-  }
-
-  #nameLink:hover::after,
-  #nameLink.active::after {
-    width: 105%;
-  }
-
-  #nameLink {
-    display: flex;
-    justify-content: center;
-  }
-
-  .custom-navbar {
-    justify-content: center;
-  }
-
-  .custom-navbar .navbar-toggler-icon {
-    font-size: 3vh;
-  }
 }
 
 .fade-in {
@@ -221,6 +187,8 @@ html {
 }
 
 .custom-navbar .navbar-nav .nav-link {
+  margin-left: 0%;
+  margin-top: 3%;
   color: #E0E1DD;
 }
 
@@ -232,18 +200,60 @@ html {
   z-index: 1;
 }
 
-/* This is for landscape mode */
-@media (max-height: 389px) and (max-width: 843px) {
-  .custom-navbar .navbar-toggler {
-    top: 20%;
-  }
-}
-
 .custom-navbar .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23e0e1dd' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .custom-navbar .navbar-nav .nav-link {
   font-size: 18px;
+}
+
+@media (max-width: 1025px) {
+  .brand-text-big {
+    font-size: 2vh;
+  }
+
+  .brand-text {
+    font-size: 1.5vh;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 20%;
+  }
+
+  #nameLink:hover::after,
+  #nameLink.active::after {
+    width: 105%;
+  }
+
+  #nameLink {
+    display: flex;
+    justify-content: center;
+    margin-left: 0%;
+  }
+
+  .custom-navbar {
+    justify-content: center;
+  }
+
+  .custom-navbar .navbar-toggler-icon {
+    font-size: 3vh;
+  }
+
+  .custom-navbar .navbar-nav .nav-link {
+    margin-top: 0%;
+  }
+}
+
+/* This is for landscape mode */
+@media (max-height: 389px) and (max-width: 843px) {
+  .custom-navbar .navbar-toggler {
+    top: 20%;
+  }
+
+  #nameLink {
+    margin-left: 5%;
+  }
 }
 

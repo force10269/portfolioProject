@@ -1,5 +1,4 @@
 import "../styles/Skills.css";
-import { useState, useEffect } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import { FaHtml5, FaCss3, FaJava, FaPython, FaJs, FaReact } from "react-icons/fa";
 import { DiMongodb, DiPostgresql } from "react-icons/di";
@@ -11,8 +10,8 @@ import { GrGraphQl } from "react-icons/gr";
 function LanguagesComponent(props) {
     return (
         <>
-        <h3 className="mb-3 fade-in" style={{paddingRight: `${props.isSmall ? '0vw' : '1.5vw'}`}}>Languages</h3>
-        {props.isSmall ? <><br/></> : <></> }
+        <h3 className="mb-3 fade-in" style={{paddingRight: `${props.isTiny ? '0vw' : '1.5vw'}`}}>Languages</h3>
+        {props.isTiny ? <><br/></> : <></> }
         <div className="skill-icon">
             <FaHtml5 size={props.iconSize/2} />
             <FaCss3 size={props.iconSize/2} />
@@ -46,7 +45,7 @@ function FrontBackComponent(props) {
     return (
         <>
         <h3 className="mb-3 fade-in">Frameworks</h3>
-        {props.isSmall ? <><br/></> : <></> }
+        {props.isTiny ? <><br/></> : <></> }
         <div className="fe-icon">
             <FaReact size={props.iconSize}/>
             <p>React</p>
@@ -75,22 +74,8 @@ function FrontBackComponent(props) {
     );
 }
 
-function SkillsComponent() {
+function SkillsComponent(props) {
     const iconSize = 64;
-
-    const [isSmall, setIsSmallScreen] = useState(window.innerWidth < 768);
-
-    useEffect(() => {
-      function handleResize() {
-        setIsSmallScreen(window.innerWidth < 768);
-      }
-  
-      window.addEventListener('resize', handleResize);
-  
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
 
     return (
         <div id="skills" className="full-page-panel">
@@ -99,22 +84,22 @@ function SkillsComponent() {
                     <strong>Skills</strong>
                 </h1>
                 <Row className="mb-5 align-items-center">
-                    {isSmall ? (
+                    {props.isTiny ? (
                         <>
                         <Col xs={6}>
-                            <LanguagesComponent iconSize={iconSize} isSmall={isSmall}/>
+                            <LanguagesComponent iconSize={iconSize} isTiny={props.isTiny}/>
                         </Col>
                         <Col xs={6}>
-                            <FrontBackComponent iconSize={iconSize} isSmall={isSmall}/>
+                            <FrontBackComponent iconSize={iconSize} isTiny={props.isTiny}/>
                         </Col>
                         </>
                     ) : (
                         <>
                         <div className="col-xs-6 d-flex flex-sm-row flex-column">
-                            <LanguagesComponent iconSize={iconSize} isSmall={isSmall}/>
+                            <LanguagesComponent iconSize={iconSize} isTiny={props.isTiny}/>
                         </div>
                         <div className="col-xs-6 d-flex flex-sm-row flex-column">
-                            <FrontBackComponent iconSize={iconSize} isSmall={isSmall}/>
+                            <FrontBackComponent iconSize={iconSize} isTiny={props.isTiny}/>
                         </div>
                         </>
                     )}

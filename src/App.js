@@ -1,7 +1,10 @@
 import './App.css';
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { isMobileOnly } from 'react-device-detect';
+import NavbarListener from './helpers/NavbarListener';
+import FadeListener from './helpers/FadeListener';
+import ScrollTo from './helpers/ScrollTo';
 import SpinnerComponent from './components/SpinnerComponent';
 import NameComponent from './components/NameComponent';
 import SkillsComponent from './components/SkillsComponent';
@@ -11,140 +14,61 @@ import ProjectsComponent from './components/ProjectsComponent';
 import ContactMeComponent from './components/ContactMeComponent';
 import FooterComponent from './components/FooterComponent';
 
-function App() {
-  // Most of this code is setting up a scroll listener for our navbar
-  const [activeSection, setActiveSection] = useState('name');
+function App() { 
+    const [
+      nameRef,
+      aboutRef,
+      skillsRef,
+      experienceRef,
+      projectsRef,
+      contactMeRef,
+      activeSection, 
+      NavbarListenerFunction
+    ] = NavbarListener();
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1025);
+    const [isTinyScreen, setIsTinyScreen] = useState(window.innerWidth < 768);
+    const [isLoading, setIsLoading] = useState(true);
+    const navbarClass = `custom-navbar ${activeSection === 'name' ? 'navbar-big' : ''} ${isSmallScreen ? 'm-auto justify-content-center' : 'mr-auto'}`;
 
-  const scrollOffset = 200;
+    useEffect(() => {
+        if (isMobileOnly) {
+          const elements = document.querySelectorAll('.fade-in');
+          elements.forEach((el) => {
+            el.classList.remove('fade-in');
+          });
+        }
 
-  // All refs that point to different section components
-  const nameRef = useRef(null);
-  const aboutRef = useRef(null);
-  const skillsRef = useRef(null);
+        function handleResize() {
+            setIsSmallScreen(window.innerWidth < 1025);
+            setIsTinyScreen(window.innerWidth < 768);
+        }
 
-  const experienceRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactMeRef = useRef(null);
+        function handleLoad() {
+            setIsLoading(false);
+        };
 
-  // Definition of the scroll event listener
-  const scrollListener = () => {
-    const pos = window.scrollY;
-    
-    // In order for the automatic highlight on the navbar to work, we need to add this offset
-    const nameTop = nameRef.current.offsetTop;
-    const aboutTop = aboutRef.current.offsetTop - scrollOffset;
-    const skillsTop = skillsRef.current.offsetTop - scrollOffset;
-    const experienceTop = experienceRef.current.offsetTop - scrollOffset;
-    const projectsTop = projectsRef.current.offsetTop - scrollOffset;
-    const contactMeTop = contactMeRef.current.offsetTop - scrollOffset;
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 750);
 
-    const inName = (nameTop <= pos && pos < aboutTop);
-    const inAbout = (aboutTop <= pos && pos < skillsTop);
-    const inSkills = (skillsTop <= pos && pos < experienceTop);
-    const inExperience = (experienceTop <= pos && pos < projectsTop);
-    const inProjects = (projectsTop <= pos && pos < contactMeTop);
-    const inContactMe = (contactMeTop <= pos);
-
-    if(inName) {
-      setActiveSection('name');
-    }else if(inSkills){
-      setActiveSection('skills');
-    }else if(inAbout) {
-      setActiveSection('about');
-    }else if(inExperience){
-      setActiveSection('experience');
-    }else if(inProjects){
-      setActiveSection('projects');
-    }else if(inContactMe){
-      setActiveSection('contactMe');
-    }
-  }
-
-  // Mount scroll event listener
-  useEffect(() => {
-    window.addEventListener('scroll', scrollListener);
-    return () => {
-      window.removeEventListener('scroll', scrollListener);
-    }
-  }, []);
-
-  // These functions are for scrolling to each section without changing the URL with an /#{sectionID}
-  function scrollTo(e, sectionName){
-    e.preventDefault();
-    const section = document.getElementById(sectionName); // Get the section element by ID
-    window.scrollTo({
-      top: section.offsetTop - (sectionName === "nameC" ? 0 : 75), // Scroll to the section's offset top
-      behavior: "smooth" // Add smooth scrolling behavior
+        window.addEventListener('load', handleLoad);
+        window.addEventListener('scroll', () => {
+            NavbarListenerFunction();
+            if(!isMobileOnly) {
+              FadeListener();
+            }
+        })
+        window.addEventListener('resize', handleResize);
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('load', handleLoad);
+            window.removeEventListener('scroll', NavbarListener);
+            if(!isMobileOnly){
+              window.removeEventListener('scroll', FadeListener);
+            }
+        };
     });
-  }
-
-  // This is for fade-in classes when the user is scrolling
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
-    const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
-  
-    const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
-    const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
-  
-    return (vertInView && horInView);
-  }
-
-  /*
-    Since fade-in is very costly for mobile Chrome users, we are going to disable it here
-  */
-  function handleScroll() {
-    const elements = document.querySelectorAll('.fade-in');
-    elements.forEach((el) => {
-      // Disables fade-in when we either are seeing the element, or if we have a mobile user on Chrome
-      if (isElementInViewport(el) || isMobileOnly) {
-        el.classList.add('fade-in-active');
-      } else {
-        el.classList.remove('fade-in-active');
-      }
-    });
-  }
-
-  // Handles fade-in classes
-  window.addEventListener('scroll', () => {
-    scrollListener();
-    handleScroll();
-  });
-
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1025);
-
-  useEffect(() => {
-    function handleResize() {
-      setIsSmallScreen(window.innerWidth < 1025);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const navbarClass = `custom-navbar ${activeSection === 'name' ? 'navbar-big' : ''} ${isSmallScreen ? 'm-auto justify-content-center' : 'mr-auto'}`;
-
-  // We use this for the first fraction of a second to give time for images to load
-  // The two useEffects serve in conjunction for loading screens on different browsers
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 750);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const handleLoad = () => {
-      setIsLoading(false);
-    };
-    window.addEventListener('load', handleLoad);
-    return () => window.removeEventListener('load', handleLoad);
-  }, []);
 
   return (
     <div className="App">
@@ -153,26 +77,26 @@ function App() {
       </div>
       <div style={{opacity: isLoading ? "0.8" : "1", backgroundColor: "#FFFAFF"}}>
         <Navbar className={navbarClass} variant="dark" expand="lg" fixed="top">
-          <Nav.Link id="nameLink" href="#nameC" active={activeSection === 'name'} onClick={(e) => scrollTo(e, "nameC")}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
+          <Nav.Link id="nameLink" href="#nameC" active={activeSection === 'name'} onClick={(e) => ScrollTo(e, "nameC")}><span className={activeSection === 'name' ? 'brand-text-big' : 'brand-text'}>Korry Tunnicliff</span></Nav.Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#about" active={activeSection === 'about'} onClick={(e) => scrollTo(e, "about")}>About</Nav.Link>
-              <Nav.Link href="#skills" active={activeSection === 'skills'} onClick={(e) => scrollTo(e, "skills")}>Skills</Nav.Link>
-              <Nav.Link href="#experience" active={activeSection === 'experience'} onClick={(e) => scrollTo(e, "experience")}>Experience</Nav.Link>
-              <Nav.Link href="#projects" active={activeSection === 'projects'} onClick={(e) => scrollTo(e, "projects")}>Projects</Nav.Link>
-              <Nav.Link href="#contactMe" active={activeSection === 'contactMe'} onClick={(e) => scrollTo(e, "contactMe")}>Contact&nbsp;Me</Nav.Link>
+              <Nav.Link href="#about" active={activeSection === 'about'} onClick={(e) => ScrollTo(e, "about")}>About</Nav.Link>
+              <Nav.Link href="#skills" active={activeSection === 'skills'} onClick={(e) => ScrollTo(e, "skills")}>Skills</Nav.Link>
+              <Nav.Link href="#experience" active={activeSection === 'experience'} onClick={(e) => ScrollTo(e, "experience")}>Experience</Nav.Link>
+              <Nav.Link href="#projects" active={activeSection === 'projects'} onClick={(e) => ScrollTo(e, "projects")}>Projects</Nav.Link>
+              <Nav.Link href="#contactMe" active={activeSection === 'contactMe'} onClick={(e) => ScrollTo(e, "contactMe")}>Contact&nbsp;Me</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
         <div ref={nameRef}>
-          <NameComponent />
+          <NameComponent isSmall={isSmallScreen} isTiny={isTinyScreen}/>
         </div>
         <div ref={aboutRef}>
-          <AboutComponent />
+          <AboutComponent isSmall={isSmallScreen} isTiny={isTinyScreen}/>
         </div>
         <div ref={skillsRef}>
-          <SkillsComponent />
+          <SkillsComponent isSmall={isSmallScreen} isTiny={isTinyScreen}/>
         </div>
         <div ref={experienceRef}>
           <ExperienceComponent />

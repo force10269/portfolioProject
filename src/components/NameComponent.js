@@ -1,41 +1,15 @@
 import '../styles/Name.css'
 import headshot from '../assets/headshot.png';
-import { useState, useEffect } from 'react';
+import ScrollTo from '../helpers/ScrollTo';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import { Container, Row, Col } from 'react-bootstrap';
 
-function NameComponent() {
-  const [isSmall, setIsSmallScreen] = useState(window.innerWidth < 1025);
-  const [isVerySmall, setIsVerySmallScreen] = useState(window.innerWidth < 768);
-
-    // These functions are for scrolling to each section without changing the URL with an /#{sectionID}
-    function scrollTo(e, sectionName){
-      e.preventDefault();
-      const section = document.getElementById(sectionName); // Get the section element by ID
-      window.scrollTo({
-        top: section.offsetTop - (sectionName === "nameC" ? 0 : 75), // Scroll to the section's offset top
-        behavior: "smooth" // Add smooth scrolling behavior
-      });
-    }
-
-  useEffect(() => {
-    function handleResize() {
-      setIsSmallScreen(window.innerWidth < 1025);
-      setIsVerySmallScreen(window.innerWidth < 768);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
+function NameComponent(props) {
   return (
     <div id="nameC" className="full-page-panel">
       <Container fluid style={{ paddingLeft: "15%", paddingRight: "15%"}}>
         <Row>
-          <Col md={6} style={{paddingTop: `${isVerySmall ? '30%' : `${isSmall ? '0%' : '10%'}`}`}}>
+          <Col md={6} style={{paddingTop: `${props.isTiny ? '30%' : `${props.isSmall ? '0%' : '10%'}`}`}}>
             <img src={headshot} alt="Headshot" className="headshot"/>
           </Col>
           <Col md={6} className="align-items-center" style={{
@@ -53,7 +27,7 @@ function NameComponent() {
         <Row>
           <Col>
             <div className="scroll-prompt">
-              <a href="#about" onClick={((e) => scrollTo(e, "about"))}><AiOutlineArrowDown id="scroll-icon" href="#about"/></a>
+              <a href="#about" onClick={((e) => ScrollTo(e, "about"))}><AiOutlineArrowDown id="scroll-icon" href="#about"/></a>
             </div>
           </Col>
         </Row>

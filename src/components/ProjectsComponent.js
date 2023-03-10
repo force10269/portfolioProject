@@ -1,16 +1,18 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import '../styles/Projects.css';
+import ProjectData from '../helpers/ProjectData';
 import { FaGithub } from 'react-icons/fa';
-
-import project1Img from '../assets/dynein.png';
-import project2Img from '../assets/caliber.png';
-import project3Img from '../assets/portfolio.png';
 
 function ProjectCard(props) {
   return (
     <div className="project-card fade-in">
       <img src={props.imgSrc} alt={props.title} />
       <div className="project-info">
+        <h2>{props.title}</h2>
+        <p>{props.description}</p>
+        <a href={props.githubLink} target="_blank" rel="noopener noreferrer">
+          <FaGithub className="fade-in" size={'5vw'} />
+        </a>
       </div>
     </div>
   );
@@ -20,36 +22,30 @@ function ProjectsComponent() {
   return (
     <div id="projects" className="full-page-panel" style={{paddingTop: "5vh", paddingBottom: "5vh"}}>
       <Container className="py-5" fluid style={{ paddingLeft: '10%', paddingRight: '10%' }}>
-      <h1 className="text-center mb-5 fade-in" style={{fontSize: '7vw'}}><strong>Projects</strong></h1>
+        <h1 className="text-center mb-5 fade-in" style={{fontSize: '7vw'}}><strong>Projects</strong></h1>
         <br />
         <Row className="justify-content-center">
-          <Col md={5} className="text-center">
-            <ProjectCard imgSrc={project1Img}/>
-            <h1 className="fade-in">Dynein Analysis</h1>
-            <p className="fade-in">Using Python scripts which utilize the OpenCV library and the ImageJ interface to perform an analysis of cell images containing dynein proteins.</p>
-            <a href="https://www.github.com/force10269/DyneinProtein" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="fade-in" size={'5vw'} />
-            </a>
-            <br /><br /><br /><br /><br />
-          </Col>
-          <Col md={5} className="text-center">
-            <ProjectCard imgSrc={project2Img}/>
-            <h1 className="fade-in">Caliber Marketplace</h1>
-            <p className="fade-in">Working with Caliber Public Safety, me and a group of five other students are working on creating a marketplace for Caliber's products and features using the MEAN stack.</p>
-            <FaGithub color="grey" className="fade-in" size={'5vw'} />
-            <p>Coming Soon</p>
-            <br /><br /><br />
-          </Col>
-        </Row>
-        <Row className="justify-content-center">
-          <Col md={5} className="text-center">
-            <ProjectCard imgSrc={project3Img}/>
-          </Col>
-          <h1 className="fade-in">Personal Portfolio Website</h1>
-          <p className="fade-in">This page! Everything you see here was created with the ReactJS framework and Bootstrap. Deployment achieved through Netlify.</p>
-          <a href="https://github.com/force10269/portfolioProject" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="fade-in" size={'5vw'} />
-          </a>
+          {ProjectData.map((project) => (
+            <Col md={5} className="text-center">
+              <ProjectCard
+                imgSrc={project.imgSrc}
+                githubLink={project.githubLink}
+              />
+              <h1 className="fade-in">{project.title}</h1>
+              <p className="fade-in">{project.description}</p>
+              {project.githubLink ? (
+                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                  <FaGithub className="fade-in" size={'5vw'} />
+                </a>
+              ) : (
+                <>
+                <FaGithub color="grey" className="fade-in" size={'5vw'} />
+                <p>Coming Soon</p>
+                </>
+              )}
+              <br /><br /><br /><br /><br />
+            </Col>
+          ))}
         </Row>
       </Container>
     </div>
