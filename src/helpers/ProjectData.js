@@ -1,6 +1,8 @@
 import project1Img from '../assets/dynein.png';
 import project2Img from '../assets/caliber.png';
 import project3Img from '../assets/portfolio.png';
+import project4Img from '../assets/blog.png';
+import project5Img from '../assets/gpt.png';
 
 const ProjectData = [
     {
@@ -23,6 +25,20 @@ const ProjectData = [
       title: "Personal Portfolio Website",
       description: "This page! Everything you see here was created with the ReactJS framework and Bootstrap. Deployment achieved through Netlify.",
       githubLink: "https://github.com/force10269/portfolioProject"
+    },
+    {
+      key: 4,
+      imgSrc: project4Img,
+      title: "The Tunnicliff Blog",
+      description: "A software development blog I made to keep track of personal software dev fiascos or tidbits of information I could really use in the future. Soon to be deployed!",
+      githubLink: "https://github.com/force10269/TunnicliffBlog"
+    },
+    {
+      key: 5,
+      imgSrc: project5Img,
+      title: "GPT Discord Bots",
+      description: "Discord bots utilizing the OpenAI API to interface with ChatGPT in Discord. Also utilizes the Tiktoken library to see how many tokens any given prompt is, including images and .txt files.",
+      githubLink: "https://github.com/force10269/Basic_GPT_Bots"
     }
 ];
 

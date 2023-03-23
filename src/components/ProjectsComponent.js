@@ -6,13 +6,10 @@ import { FaGithub } from 'react-icons/fa';
 function ProjectCard(props) {
   return (
     <div className="project-card fade-in">
-      <img src={props.imgSrc} alt={props.title} />
+      <img src={props.imgSrc} alt={props.title} className="project-card-image"/>
       <div className="project-info">
         <h2>{props.title}</h2>
         <p>{props.description}</p>
-        <a href={props.githubLink} target="_blank" rel="noopener noreferrer">
-          <FaGithub className="fade-in" size={'5vw'} />
-        </a>
       </div>
     </div>
   );

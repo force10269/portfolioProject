@@ -10,7 +10,7 @@ import { GrGraphQl } from "react-icons/gr";
 function LanguagesComponent(props) {
     return (
         <>
-        <h3 className="mb-3 fade-in" style={{paddingRight: `${props.isTiny ? '0vw' : '1.5vw'}`}}>Languages</h3>
+        <h3 className="mb-3 fade-in" style={{paddingRight: `${props.isTiny ? '0vw' : '1.5vw'}`}}><i>Languages</i></h3>
         {props.isTiny ? <><br/></> : <></> }
         <div className="skill-icon">
             <FaHtml5 size={props.iconSize/2} />
@@ -44,7 +44,7 @@ function LanguagesComponent(props) {
 function FrontBackComponent(props) {
     return (
         <>
-        <h3 className="mb-3 fade-in">Frameworks</h3>
+        <h3 className="mb-3 fade-in"><i>Frameworks</i></h3>
         {props.isTiny ? <><br/></> : <></> }
         <div className="fe-icon">
             <FaReact size={props.iconSize}/>
