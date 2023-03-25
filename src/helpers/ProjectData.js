@@ -30,7 +30,7 @@ const ProjectData = [
       key: 4,
       imgSrc: project4Img,
       title: "The Tunnicliff Blog",
-      description: "A software development blog I made to keep track of personal software dev fiascos or tidbits of information I could really use in the future. Soon to be deployed!",
+      description: "A software development blog I made to keep track of personal software dev fiascos or tidbits of information I could really use in the future. Deployed at: ",
       githubLink: "https://github.com/force10269/TunnicliffBlog"
     },
     {

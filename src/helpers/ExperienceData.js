@@ -38,16 +38,6 @@
     },
     {
       key: 5,
-      title: 'Cashier',
-      location: 'Ideal Market, Boulder, CO',
-      timeline: 'January 2023 - Present',
-      description:
-        'Provides a positive experience for our customers with courteous service, and thorough knowledge of both our produce and products.',
-      descriptionCont:
-        'Works on the frontend of the store, and helps to process hundreds of transactions a day.',
-    },
-    {
-      key: 6,
       title: 'Chess Tutor',
       location: 'Chessmates, Boulder Valley School District',
       timeline: 'January 2023 - Present',
