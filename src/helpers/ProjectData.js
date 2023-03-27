@@ -3,6 +3,7 @@ import project2Img from '../assets/caliber.png';
 import project3Img from '../assets/portfolio.png';
 import project4Img from '../assets/blog.png';
 import project5Img from '../assets/gpt.png';
+import project6Img from '../assets/fuff.png';
 
 const ProjectData = [
     {
@@ -39,6 +40,13 @@ const ProjectData = [
       title: "GPT Discord Bots",
       description: "Discord bots utilizing the OpenAI API to interface with ChatGPT in Discord. Also utilizes the Tiktoken library to see how many tokens any given prompt is, including images and .txt files.",
       githubLink: "https://github.com/force10269/Basic_GPT_Bots"
+    },
+    {
+      key: 6,
+      imgSrc: project6Img,
+      title: "Fuff: Fit Buffs",
+      description: "A React Native iOS application intended to be a hi-fi prototype for a redesign of CU Boulder's Recreation Center app. Currently in development.",
+      githubLink: "https://github.com/force10269/Fuff"
     }
 ];
 
