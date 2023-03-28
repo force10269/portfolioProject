@@ -1,12 +1,19 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import '../styles/Projects.css';
 import ProjectData from '../helpers/ProjectData';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
 import { FaGithub } from 'react-icons/fa';
 
 function ProjectCard(props) {
   return (
     <div className="project-card fade-in">
-      <img src={props.imgSrc} alt={props.title} className="project-card-image"/>
+      <LazyLoadImage
+        src={props.imgSrc}
+        alt={props.title}
+        effect="opacity"
+        className="project-card-image"
+      />
       <div className="project-info">
         <h2>{props.title}</h2>
         <p>{props.description}</p>
