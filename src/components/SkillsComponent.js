@@ -44,7 +44,7 @@ function LanguagesComponent(props) {
 function FrontBackComponent(props) {
     return (
         <>
-        <h3 className="mb-3 fade-in"><i>Frameworks</i></h3>
+        <h3 className="mb-3 fade-in"><i>Technologies</i></h3>
         {props.isTiny ? <><br/></> : <></> }
         <div className="fe-icon">
             <FaReact size={props.iconSize}/>
