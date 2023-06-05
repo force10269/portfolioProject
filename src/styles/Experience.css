@@ -1,59 +1,58 @@
-
 .experience-card {
-    display: flex;
-    padding: 2.5%;
-    border-radius: 10px;
-    box-shadow: 0px 0.5vw 1vw rgba(255, 255, 255, 0.2);
+  display: flex;
+  padding: 2.5%;
+  border-radius: 10px;
+  box-shadow: 0px 0.5vw 1vw rgba(255, 255, 255, 0.2);
 }
 
 .experience-card h3 {
-    font-size: 3.5vh;
+  font-size: 3.5vh;
 }
 
 .experience-card h4 {
-    font-size: 2.5vh;
+  font-size: 2.5vh;
 }
 
 .experience-card h5 {
-    font-size: 2.5vh;
-}   
+  font-size: 2.5vh;
+}
 
 .experience-card p {
-    font-size: 2.3vh;
+  font-size: 2.3vh;
 }
 
 @media (max-width: 1025px) {
-    .experience-card h3 {
-        font-size: 3.5vh;
-    }
+  .experience-card h3 {
+    font-size: 1.8vh;
+  }
 
-    .experience-card h4 {
-        font-size: 1.5vh;
-    }
+  .experience-card h4 {
+    font-size: 1.5vh;
+  }
 
-    .experience-card h5 {
-        font-size: 1.5vh;
-    }
+  .experience-card h5 {
+    font-size: 1.5vh;
+  }
 
-    .experience-card p {
-        font-size: 1.8vh;
-    }
+  .experience-card p {
+    font-size: 1.8vh;
+  }
 }
 
 @media (max-width: 768px) {
-    .experience-card h3 {
-        font-size: 3vh;
-    }
+  .experience-card h3 {
+    font-size: 3vh;
+  }
 
-    .experience-card h4 {
-        font-size: 1.5vh;
-    }
+  .experience-card h4 {
+    font-size: 1.5vh;
+  }
 
-    .experience-card h5 {
-        font-size: 1.5vh;
-    }
+  .experience-card h5 {
+    font-size: 1.5vh;
+  }
 
-    .experience-card p {
-        font-size: 1.8vh;
-    }
+  .experience-card p {
+    font-size: 1.8vh;
+  }
 }

@@ -12,9 +12,9 @@ function AboutLeft(props) {
       </h1>
       <div>
         <h3 className="fade-in">
-          &nbsp; &nbsp; &nbsp; &nbsp; I am a Computer Science student at the
-          University of Colorado Boulder. I currently have a 3.73 GPA and, to
-          date, my coursework at CU Boulder has included:{" "}
+          &nbsp; &nbsp; &nbsp; &nbsp; I am a Software Engineer who has graduated
+          from the University of Colorado Boulder. I graduated with a 3.75 GPA
+          and have taken coursework in:{" "}
         </h3>
         <br />
         <div className="fade-in" style={{ columnCount: 2 }}>
@@ -55,10 +55,10 @@ function AboutLeft(props) {
         </div>
         <br />
         <h3 className="fade-in">
-          &nbsp; &nbsp; &nbsp; &nbsp; After graduating, I will be joining
-          LineVision as a full-time Software Engineer. I am extremely passionate
-          about software development, and am excited about the technologies that
-          I will be learning out in the industry!
+          &nbsp; &nbsp; &nbsp; &nbsp; Currently, I am working as a Software
+          Engineer at LineVision. I am extremely passionate about software
+          development, and am incredibly excited about the prospect of learning
+          new technologies and growing as a programmer.
         </h3>
       </div>
     </>
