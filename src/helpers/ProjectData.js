@@ -60,7 +60,7 @@ const ProjectData = [
     imgSrc: project7Img,
     title: "Vim Dictionary",
     description:
-      "A simple SPA page for quickly looking up Vim shortcuts. Currently being built with Next.js and a backend of Rust.",
+      "A simple SPA page for quickly looking up Vim shortcuts. Built with Next.js and a backend of Rust. Frontend deployed with Netlify, and backend deployed with a Docker container on Heroku.",
     githubLink: "https://www.github.com/force10269/vim-dictionary",
   },
 ];

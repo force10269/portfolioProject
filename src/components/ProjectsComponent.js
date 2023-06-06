@@ -1,9 +1,9 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import '../styles/Projects.css';
-import ProjectData from '../helpers/ProjectData';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/opacity.css';
-import { FaGithub } from 'react-icons/fa';
+import { Container, Row, Col } from "react-bootstrap";
+import "../styles/Projects.css";
+import ProjectData from "../helpers/ProjectData";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
+import { FaGithub } from "react-icons/fa";
 
 function ProjectCard(props) {
   return (
@@ -24,9 +24,19 @@ function ProjectCard(props) {
 
 function ProjectsComponent() {
   return (
-    <div id="projects" className="full-page-panel" style={{paddingTop: "5vh", paddingBottom: "5vh"}}>
-      <Container className="py-5" fluid style={{ paddingLeft: '10%', paddingRight: '10%' }}>
-        <h1 className="text-center mb-5 fade-in" style={{fontSize: '7vw'}}><strong>Projects</strong></h1>
+    <div
+      id="projects"
+      className="full-page-panel"
+      style={{ paddingTop: "5vh", paddingBottom: "5vh" }}
+    >
+      <Container
+        className="py-5"
+        fluid
+        style={{ paddingLeft: "10%", paddingRight: "10%" }}
+      >
+        <h1 className="text-center mb-5 fade-in" style={{ fontSize: "7vw" }}>
+          <strong>Projects</strong>
+        </h1>
         <br />
         <Row className="justify-content-center">
           {ProjectData.map((project) => (
@@ -38,18 +48,47 @@ function ProjectsComponent() {
               />
               <h1 className="fade-in">{project.title}</h1>
               <p className="fade-in">{project.description}</p>
-              {project.key === 4 && <p className="fade-in"><a href="https://www.tunnicliffblog.com/" target="_blank" rel="noopener noreferrer">tunnicliffblog.com</a></p>}
+              {project.key === 4 && (
+                <p className="fade-in">
+                  <a
+                    href="https://www.tunnicliffblog.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    tunnicliffblog.com
+                  </a>
+                </p>
+              )}
+              {project.key === 7 && (
+                <p className="fade-in">
+                  <a
+                    href="https://www.vimdictionary.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    vimdictionary.com
+                  </a>
+                </p>
+              )}
               {project.githubLink ? (
-                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                  <FaGithub className="fade-in" size={'5vw'} />
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub className="fade-in" size={"5vw"} />
                 </a>
               ) : (
                 <>
-                <FaGithub color="grey" className="fade-in" size={'5vw'} />
-                <p>Coming Soon</p>
+                  <FaGithub color="grey" className="fade-in" size={"5vw"} />
+                  <p>Coming Soon</p>
                 </>
               )}
-              <br /><br /><br /><br /><br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
             </Col>
           ))}
         </Row>
