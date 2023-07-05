@@ -34,7 +34,7 @@ function ContactMe() {
         <strong id="contact-header">Contact Me!</strong>
       </h1>
       <p>
-        <u>Email:</u> korry.tunnicliff@colorado.edu
+        <u>Email:</u> korrytunnicliff@gmail.com
       </p>
       <p> 
         <u>Phone:</u> 720-833-1097
