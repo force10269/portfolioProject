@@ -1,11 +1,10 @@
 import "../styles/Skills.css";
 import { Container, Row, Col } from "react-bootstrap";
-import { FaHtml5, FaCss3, FaJava, FaPython, FaJs, FaReact } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJava, FaPython, FaJs, FaReact, FaAws, FaPhoenixFramework, FaFlask } from "react-icons/fa";
 import { DiMongodb, DiPostgresql } from "react-icons/di";
 import { IoLogoAngular, IoLogoNodejs } from "react-icons/io";
 import { ReactComponent as CppLogo } from "../assets/cpp_logo.svg";
 import { ReactComponent as ExpressLogo } from "../assets/express.svg";
-import { GrGraphQl } from "react-icons/gr";
 
 function LanguagesComponent(props) {
     return (
@@ -13,29 +12,33 @@ function LanguagesComponent(props) {
         <h3 className="mb-3 fade-in" style={{paddingRight: `${props.isTiny ? '0vw' : '1.5vw'}`}}><i>Languages</i></h3>
         {props.isTiny ? <><br/></> : <></> }
         <div className="skill-icon">
-            <FaHtml5 size={props.iconSize/2} />
-            <FaCss3 size={props.iconSize/2} />
-            <p>HTML + CSS</p>
-        </div>
-        <div className="skill-icon">
-            <FaJava size={props.iconSize} />
-            <p>Java</p>
+            <FaPython size={props.iconSize} />
+            <p>Python</p>
         </div>
         <div className="skill-icon">
             <FaJs size={props.iconSize}/>
             <p>JavaScript</p>
         </div>
         <div className="skill-icon">
-            <FaPython size={props.iconSize} />
-            <p>Python</p>
-        </div>
-        <div className="skill-icon">
             <CppLogo />
             <p>C++</p>
         </div>
         <div className="skill-icon">
+            <FaJava size={props.iconSize} />
+            <p>Java</p>
+        </div>
+        <div className="skill-icon">
             <DiPostgresql size={props.iconSize}/>
             <p>SQL</p>
+        </div>
+        <div className="skill-icon">
+            <FaPhoenixFramework size={props.iconSize}/>
+            <p>Elixir</p>
+        </div>
+        <div className="skill-icon">
+            <FaHtml5 size={props.iconSize/2} />
+            <FaCss3 size={props.iconSize/2} />
+            <p>HTML + CSS</p>
         </div>
         </>
     );
@@ -46,6 +49,14 @@ function FrontBackComponent(props) {
         <>
         <h3 className="mb-3 fade-in"><i>Technologies</i></h3>
         {props.isTiny ? <><br/></> : <></> }
+        <div className="fe-icon">
+            <FaAws size={props.iconSize}/>
+            <p>AWS</p>
+        </div>
+        <div className="fe-icon">
+            <FaFlask size={props.iconSize}/>
+            <p>Flask</p>
+        </div>
         <div className="fe-icon">
             <FaReact size={props.iconSize}/>
             <p>React</p>
@@ -61,10 +72,6 @@ function FrontBackComponent(props) {
         <div className="fe-icon">
             <IoLogoNodejs size={props.iconSize}/>
             <p>Node</p>
-        </div>
-        <div className="fe-icon">
-            <GrGraphQl size={props.iconSize}/>
-            <p>GraphQL</p>
         </div>
         <div className="fe-icon">
             <DiMongodb size={props.iconSize}/>
