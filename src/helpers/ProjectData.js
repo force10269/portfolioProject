@@ -20,7 +20,7 @@ const ProjectData = [
     imgSrc: project2Img,
     title: "Caliber Marketplace",
     description:
-      "Working with Caliber Public Safety, me and a group of five other students are working on creating a marketplace for Caliber's products and features using the MEAN stack.",
+      "Working with Caliber Public Safety, me and a group of five other students worked on creating a marketplace for Caliber's products and features using the MEAN stack.",
     githubLink: "",
   },
   {
@@ -60,7 +60,7 @@ const ProjectData = [
     imgSrc: project7Img,
     title: "Vim Dictionary",
     description:
-      "A simple SPA page for quickly looking up Vim shortcuts. Built with Next.js and a backend of Rust. Frontend deployed with Netlify, and backend deployed with a Docker container on Heroku.",
+      "A simple SPA page for quickly looking up Vim shortcuts. Built with Next.js and a backend of Rust. Frontend deployed with Netlify, and backend deployed with a Docker container on Heroku. Deployed at: ",
     githubLink: "https://www.github.com/force10269/vim-dictionary",
   },
 ];

@@ -7,7 +7,7 @@ const ExperienceData = [
     description:
       "Developing the technology for monitoring the electrical grid, and striving to accelerate the Net Zero grid.",
     descriptionCont:
-      "Collaborating with an Agile team to design and implement software solutions, including test driven development.",
+      "Collaborating with an Agile team while utilizing Flask, React, and AWS technologies for enhanced data visualization and calibration of client asset data."
   },
   {
     key: 1,
@@ -52,7 +52,7 @@ const ExperienceData = [
     key: 5,
     title: "Chess Tutor",
     location: "Chessmates, Boulder Valley School District",
-    timeline: "January 2023 - Present",
+    timeline: "January 2023 - May 2023",
     description:
       "Teaches chess to several elementary schools clubs as both before-school and after-school programs.",
     descriptionCont:

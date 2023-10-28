@@ -12,7 +12,7 @@ function AboutLeft(props) {
       </h1>
       <div>
         <h3 className="fade-in">
-          &nbsp; &nbsp; &nbsp; &nbsp; I am a Software Engineer who has graduated
+          &nbsp; &nbsp; &nbsp; &nbsp; I am a Full-Stack Software Engineer who has graduated
           from the University of Colorado Boulder. I graduated with a 3.75 GPA
           and have taken coursework in:{" "}
         </h3>
@@ -58,7 +58,7 @@ function AboutLeft(props) {
           &nbsp; &nbsp; &nbsp; &nbsp; Currently, I am working as a Software
           Engineer at LineVision. I am extremely passionate about software
           development, and am incredibly excited about the prospect of learning
-          new technologies and growing as a programmer.
+          new technologies and growing as a programmer!
         </h3>
       </div>
     </>

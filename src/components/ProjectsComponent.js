@@ -81,7 +81,7 @@ function ProjectsComponent() {
               ) : (
                 <>
                   <FaGithub color="grey" className="fade-in" size={"5vw"} />
-                  <p>Coming Soon</p>
+                  <p>Unavailable for reasons of IP</p>
                 </>
               )}
               <br />
