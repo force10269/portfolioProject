@@ -19,8 +19,7 @@ function NameComponent(props) {
                 alignItems: "center",
               }}>
             <h1 id="head1"><strong>Korry Tunnicliff</strong></h1>
-            <h3 id="head2" className="name-subheader-1"><i>CU Boulder '23</i></h3>
-            <h3 id="head3" className="name-subheader-2"><i>Computer Science BS</i></h3>
+            <h3 id="head2" className="name-subheader-1"><i>Software Engineer @ LineVision</i></h3>
             <br />
           </Col>
         </Row>
