@@ -55,7 +55,8 @@ function ProjectsComponent() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    tunnicliffblog.com
+                    tunnicliffblog.com <br /> (currently down since I don't want
+                    to pay for Heroku anymore)
                   </a>
                 </p>
               )}
@@ -66,7 +67,8 @@ function ProjectsComponent() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    vimdictionary.com
+                    vimdictionary.com <br /> (backend functionality down since I
+                    don't want to pay for Heroku anymore)
                   </a>
                 </p>
               )}
