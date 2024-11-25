@@ -1,5 +1,5 @@
 import '../styles/Name.css'
-import headshot from '../assets/headshot.png';
+import headshot from '../assets/headshot.jpg';
 import ScrollTo from '../helpers/ScrollTo';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -19,7 +19,7 @@ function NameComponent(props) {
                 alignItems: "center",
               }}>
             <h1 id="head1"><strong>Korry Tunnicliff</strong></h1>
-            <h3 id="head2" className="name-subheader-1"><i>Software Engineer @ LineVision</i></h3>
+            <h3 id="head2" className="name-subheader-1"><i>Software Engineer @ AWS</i></h3>
             <br />
           </Col>
         </Row>
