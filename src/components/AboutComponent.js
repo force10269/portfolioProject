@@ -28,16 +28,16 @@ function AboutLeft(props) {
               <br />
             </h4>
             <h4>
-              <i>- Differential Equations</i>
+              <i>- Distributed Systems</i>
               <br />
             </h4>
             <h4>
-              <i>- Operating Systems</i>
+              <i>- Cloud Infrastructure</i>
             </h4>
           </div>
           <div>
             <h4>
-              <i>- Linear Algebra</i>
+              <i>- Recommendation Systems</i>
             </h4>
             <h4>
               <i>- Data Structures</i>
@@ -55,10 +55,11 @@ function AboutLeft(props) {
         </div>
         <br />
         <h3 className="fade-in">
-          &nbsp; &nbsp; &nbsp; &nbsp; Currently, I am working as a Software
-          Engineer at Amazon Web Services on the Bedrock team, working with
-          exciting new technologies and foundational models from companies
-          such as Anthropic, Meta, Mistral AI, and Stability AI.
+          &nbsp; &nbsp; &nbsp; &nbsp; Currently, I am working as a Software 
+          Engineer at Amazon on the Haul Personalization team, building scalable 
+          recommendation systems that drive millions of dollars in revenue through 
+          personalized shopping experiences. Previously, I contributed to AWS Bedrock's 
+          infrastructure supporting foundational models from Anthropic, Meta, and Mistral AI.
         </h3>
       </div>
     </>

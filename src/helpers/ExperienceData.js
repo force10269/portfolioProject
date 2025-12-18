@@ -2,12 +2,12 @@ const ExperienceData = [
   {
     key: 0,
     title: "Software Engineer",
-    location: "Amazon Web Services",
+    location: "Amazon",
     timeline: "November 2024 - Present",
     description:
-        "Implementing and designing complex, scalable systems for more than a million business customers.",
+      "Building personalized recommendation systems for Amazon Haul, and contributed to AWS Bedrock's inference infrastructure.",
     descriptionCont:
-        "Growing the architecture that supports training and fine-tuning of LLMs such as Claude 3.5 Haiku."
+      "Designed and scaled multiple distributed projects for Amazon Haul's personalization ecosystem, including personalized push notifications generating over $50 million in annualized revenue from 10 million+ pushes a week",
   },
   {
     key: 1,
@@ -17,7 +17,7 @@ const ExperienceData = [
     description:
       "Developed the technology for monitoring the electrical grid, accelerating the Net Zero grid.",
     descriptionCont:
-      "Collaborating with an Agile team while utilizing Flask, React, and AWS technologies for enhanced data visualization and calibration of client asset data."
+      "Collaborating with an Agile team while utilizing Flask, React, and AWS technologies for enhanced data visualization and calibration of client asset data.",
   },
   {
     key: 2,

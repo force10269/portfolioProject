@@ -19,7 +19,7 @@ function NameComponent(props) {
                 alignItems: "center",
               }}>
             <h1 id="head1"><strong>Korry Tunnicliff</strong></h1>
-            <h3 id="head2" className="name-subheader-1"><i>Software Engineer @ AWS</i></h3>
+            <h3 id="head2" className="name-subheader-1"><i>Software Engineer @ Amazon</i></h3>
             <br />
           </Col>
         </Row>
