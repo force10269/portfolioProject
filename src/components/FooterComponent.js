@@ -23,7 +23,7 @@ function FooterComponent() {
           <div className="text-center mb-3">
             <p>Email: korrytunnicliff@gmail.com</p>
             <p>Phone: 720-833-1097</p>
-            <p>&copy; 2023 Korry Tunnicliff. All rights reserved.</p>
+            <p>&copy; 2026 Korry Tunnicliff. All rights reserved.</p>
           </div>
         </Row>
       </Container>
