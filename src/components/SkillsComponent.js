@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { FaHtml5, FaCss3, FaJava, FaPython, FaJs, FaReact, FaAws, FaPhoenixFramework, FaFlask } from "react-icons/fa";
 import { DiMongodb, DiPostgresql } from "react-icons/di";
 import { IoLogoAngular, IoLogoNodejs } from "react-icons/io";
+import { SiGo, SiKubernetes } from "react-icons/si";
 import { ReactComponent as CppLogo } from "../assets/cpp_logo.svg";
 import { ReactComponent as ExpressLogo } from "../assets/express.svg";
 
@@ -34,6 +35,10 @@ function LanguagesComponent(props) {
         <div className="skill-icon">
             <FaPhoenixFramework size={props.iconSize}/>
             <p>Elixir</p>
+        </div>
+        <div className="skill-icon">
+            <SiGo size={props.iconSize}/>
+            <p>Go</p>
         </div>
         <div className="skill-icon">
             <FaHtml5 size={props.iconSize/2} />
@@ -76,6 +81,10 @@ function FrontBackComponent(props) {
         <div className="fe-icon">
             <DiMongodb size={props.iconSize}/>
             <p>MongoDB</p>
+        </div>
+        <div className="fe-icon">
+            <SiKubernetes size={props.iconSize}/>
+            <p>Kubernetes</p>
         </div>
         </>
     );

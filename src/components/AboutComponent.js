@@ -55,11 +55,12 @@ function AboutLeft(props) {
         </div>
         <br />
         <h3 className="fade-in">
-          &nbsp; &nbsp; &nbsp; &nbsp; Currently, I am working as a Software 
-          Engineer at Amazon on the Haul Personalization team, building scalable 
-          recommendation systems that drive millions of dollars in revenue through 
-          personalized shopping experiences. Previously, I contributed to AWS Bedrock's 
-          infrastructure supporting foundational models from Anthropic, Meta, and Mistral AI.
+          &nbsp; &nbsp; &nbsp; &nbsp; Currently, I am working as a Software
+          Engineer at Robinhood on the Gold team, building and scaling backend
+          services that power Robinhood's premium subscription offering.
+          Previously, I was at Amazon on the Haul Personalization team, where I
+          built recommendation systems generating over $50M in annualized revenue,
+          and contributed to AWS Bedrock's inference infrastructure.
         </h3>
       </div>
     </>
