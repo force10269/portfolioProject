@@ -47,7 +47,7 @@ function ContactMe() {
           <p>
             <i>Submit a message: </i>
           </p>
-          <Row>
+          <Row className="align-items-stretch">
             <Col md={6}>
               <Form.Group controlId="name">
                 <Form.Control
@@ -79,18 +79,14 @@ function ContactMe() {
                 />
               </Form.Group>
             </Col>
-            <Col md={6}>
-              <Form.Group controlId="message" style={{
-                justifyContent: "center",
-                alignItems: "center",
-              }}>
+            <Col md={6} className="d-flex flex-column">
+              <Form.Group controlId="message" className="flex-grow-1 d-flex flex-column">
                 <Form.Control
                   as="textarea"
-                  rows={Math.max(3, Math.ceil(message.length / 50))}
                   placeholder="Message: *"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-50 form-field-right"
+                  className="w-50 form-field-right flex-grow-1"
                 />
               </Form.Group>
             </Col>
