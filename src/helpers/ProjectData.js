@@ -4,7 +4,6 @@ import project3Img from "../assets/portfolio.png";
 import project4Img from "../assets/blog.png";
 import project5Img from "../assets/gpt.png";
 import project6Img from "../assets/fuff.png";
-import project7Img from "../assets/vim-dictionary.png";
 
 const ProjectData = [
   {
@@ -54,14 +53,6 @@ const ProjectData = [
     description:
       "A React Native iOS application intended to be a hi-fi prototype for a redesign of CU Boulder's Recreation Center app.",
     githubLink: "https://github.com/force10269/Fuff",
-  },
-  {
-    key: 7,
-    imgSrc: project7Img,
-    title: "Vim Dictionary",
-    description:
-      "A simple SPA page for quickly looking up Vim shortcuts. Built with Next.js and a backend of Rust. Frontend deployed with Netlify, and backend deployed with a Docker container on Heroku. Deployed at: ",
-    githubLink: "https://www.github.com/force10269/vim-dictionary",
   },
 ];
 
